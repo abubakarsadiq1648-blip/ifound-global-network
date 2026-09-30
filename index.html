@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IFOUND — Building technology, research, and knowledge solutions for a better-connected world.">
+<title>IFOUND | Technology, Research & Innovation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#030811;
+    --bg-soft:#07111f;
+    --blue:#1479ff;
+    --blue-light:#55a7ff;
+    --green:#27ae60;
+    --green-light:#52d98a;
+    --white:#fff;
+    --text:#e8eef7;
+    --muted:#94a5ba;
+    --border:rgba(255,255,255,.09);
+    --border-light:rgba(255,255,255,.16);
+    --shadow:0 25px 80px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+    font-family:Inter,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+
+.site-header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    transition:.3s;
+}
+.site-header.scrolled{
+    background:rgba(3,8,17,.88);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
+}
+.header-inner{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.logo{
+    font-family:"Space Grotesk";
+    font-size:1.55rem;
+    font-weight:700;
+    letter-spacing:-1px;
+}
+.logo-dot{color:var(--green)}
+.main-nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+.main-nav a{
+    color:var(--muted);
+    font-size:.92rem;
+    transition:.25s;
+}
+.main-nav a:hover,.main-nav a.active{color:white}
+.menu-toggle{
+    display:none;
+    border:0;
+    background:none;
+    color:white;
+    font-size:1.7rem;
+    cursor:pointer;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    padding:130px 0 80px;
+}
+.glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.18;
+    pointer-events:none;
+}
+.glow.one{background:var(--blue);top:-200px;right:-100px}
+.glow.two{background:var(--green);bottom:-250px;left:-150px}
+.hero-content{max-width:850px;position:relative;z-index:2}
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    color:var(--green-light);
+    font-weight:700;
+    font-size:.78rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+.eyebrow:before{
+    content:"";
+    width:28px;
+    height:2px;
+    background:var(--green);
+}
+.hero h1{
+    font-family:"Space Grotesk";
+    font-size:clamp(3rem,7vw,6.3rem);
+    line-height:1;
+    letter-spacing:-4px;
+    margin-bottom:28px;
+}
+.hero h1 span{
+    background:linear-gradient(90deg,var(--blue-light),var(--green-light));
+   
+}
+.hero p{
+    max-width:720px;
+    color:var(--muted);
+    font-size:1.12rem;
+}
+.actions{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:35px;
+}
+.btn{
+    padding:13px 22px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:.9rem;
+    transition:.3s;
+}
+.btn-primary{
+    background:var(--blue);
+    color:white;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(20,121,255,.25)}
+.btn-secondary{
+    border:1px solid var(--border-light);
+    color:white;
+}
+.btn-secondary:hover{background:rgba(255,255,255,.06)}
+
+.section{padding:110px 0}
+.section-heading{max-width:750px;margin-bottom:50px}
+.section-heading .eyebrow{margin-bottom:14px}
+.section-heading h2{
+    font-family:"Space Grotesk";
+    font-size:clamp(2rem,4vw,3.4rem);
+    line-height:1.1;
+    margin-bottom:18px;
+}
+.section-heading p{color:var(--muted)}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+.card{
+    padding:30px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+    transition:.35s;
+}
+.card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(85,167,255,.3);
+    box-shadow:var(--shadow);
+}
+.icon{
+    width:50px;
+    height:50px;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    background:rgba(20,121,255,.12);
+    color:var(--blue-light);
+    font-size:1.4rem;
+    margin-bottom:20px;
+}
+.card h3{
+    font-family:"Space Grotesk";
+    font-size:1.25rem;
+    margin-bottom:10px;
+}
+.card p{color:var(--muted);font-size:.92rem}
+
+.split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+.panel{
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:40px;
+    background:var(--bg-soft);
+}
+.panel h3{
+    font-family:"Space Grotesk";
+    font-size:2rem;
+    margin-bottom:18px;
+}
+.panel p{color:var(--muted)}
+.list{list-style:none;margin-top:25px}
+.list li{
+    padding:13px 0;
+    border-bottom:1px solid var(--border);
+    color:#cbd6e4;
+}
+.list li:before{
+    content:"✓";
+    color:var(--green-light);
+    margin-right:12px;
+    font-weight:bold;
+}
+
+.cta{
+    padding:70px 40px;
+    border-radius:28px;
+    border:1px solid var(--border);
+    background:linear-gradient(135deg,rgba(20,121,255,.14),rgba(39,174,96,.08));
+    text-align:center;
+}
+.cta h2{
+    font-family:"Space Grotesk";
+    font-size:clamp(2rem,4vw,3.2rem);
+    margin-bottom:15px;
+}
+.cta p{color:var(--muted);max-width:650px;margin:auto}
+
+footer{
+    border-top:1px solid var(--border);
+    padding:35px 0;
+    color:var(--muted);
+}
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
+}
+.footer-links{display:flex;gap:20px;font-size:.85rem}
+.footer-links a:hover{color:white}
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:.8s ease;
+}
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+/* =========================================================
+   IFOUND DOWNLOAD NOW BUTTON
+========================================================= */
+
+.download-button-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px 0;
+}
+
+/* Main button */
+
+.ifound-download-btn{
+    position:relative;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+
+    min-width:300px;
+    height:76px;
+
+    padding:0 32px;
+
+    color:#ffffff;
+    background:
+        linear-gradient(
+            180deg,
+            #238cff 0%,
+            #1479ff 45%,
+            #075dc9 100%
+        );
+
+    border:3px solid #0755b5;
+    border-radius:14px;
+
+    font-family:"Space Grotesk", sans-serif;
+    font-size:1.35rem;
+    font-weight:800;
+    letter-spacing:.8px;
+
+    text-decoration:none;
+
+    box-shadow:
+        0 5px 0 #03428e,
+        0 10px 20px rgba(0,0,0,.30),
+        0 0 18px rgba(20,121,255,.45),
+        inset 0 2px 2px rgba(255,255,255,.45),
+        inset 0 -5px 10px rgba(0,50,130,.20);
+
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        background .2s ease;
+
+    overflow:hidden;
+
+    cursor:pointer;
+}
+
+/* Bright reflection across the button */
+
+.ifound-download-btn::before{
+    content:"";
+
+    position:absolute;
+    top:3px;
+    left:8%;
+    right:8%;
+
+    height:35%;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.35),
+            rgba(255,255,255,0)
+        );
+
+    pointer-events:none;
+}
+
+/* Animated light */
+
+.ifound-download-btn::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:45%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    transform:skewX(-20deg);
+
+    animation:downloadShine 3.5s infinite;
+
+    pointer-events:none;
+}
+
+/* Download icon */
+
+.download-icon{
+    position:relative;
+    z-index:2;
+
+    width:43px;
+    height:43px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:9px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        inset 0 2px 4px rgba(255,255,255,.20),
+        0 3px 8px rgba(0,0,0,.18);
+}
+
+/* SVG icon */
+
+.download-icon svg{
+    width:28px;
+    height:28px;
+
+    fill:none;
+    stroke:#ffffff;
+    stroke-width:2.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+/* Text */
+
+.download-text{
+    position:relative;
+    z-index:2;
+
+    text-shadow:
+        0 2px 3px rgba(0,0,0,.30);
+}
+
+/* Hover */
+
+.ifound-download-btn:hover{
+    transform:translateY(-3px);
+
+    background:
+        linear-gradient(
+            180deg,
+            #39a0ff 0%,
+            #1479ff 45%,
+            #0866dc 100%
+        );
+
+    box-shadow:
+        0 7px 0 #03428e,
+        0 15px 30px rgba(0,0,0,.35),
+        0 0 30px rgba(20,121,255,.65),
+        inset 0 2px 3px rgba(255,255,255,.50);
+}
+
+/* ACTIVE / PRESSED STATE */
+
+.ifound-download-btn:active{
+    transform:translateY(4px);
+
+    box-shadow:
+        0 1px 0 #03428e,
+        0 4px 10px rgba(0,0,0,.25),
+        0 0 15px rgba(20,121,255,.40),
+        inset 0 3px 8px rgba(0,0,0,.25);
+
+    background:
+        linear-gradient(
+            180deg,
+            #075dc9,
+            #1479ff
+        );
+}
+
+/* Keyboard accessibility */
+
+.ifound-download-btn:focus-visible{
+    outline:3px solid rgba(82,217,138,.8);
+    outline-offset:5px;
+}
+
+/* Shining animation */
+
+@keyframes downloadShine{
+
+    0%{
+        left:-100%;
+    }
+
+    45%,
+    100%{
+        left:130%;
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .ifound-download-btn{
+        width:100%;
+        min-width:0;
+        height:70px;
+
+        padding:0 20px;
+
+        font-size:1.05rem;
+        gap:13px;
+
+        border-radius:13px;
+    }
+
+    .download-icon{
+        width:40px;
+        height:40px;
+    }
+
+    .download-icon svg{
+        width:25px;
+        height:25px;
+    }
+
+}
+
+@media(max-width:900px){
+    .main-nav{
+        position:absolute;
+        top:76px;
+        left:4%;
+        right:4%;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:25px;
+        border:1px solid var(--border);
+        border-radius:15px;
+        background:#07111f;
+    }
+    .main-nav.open{display:flex}
+    .menu-toggle{display:block}
+    .grid{grid-template-columns:1fr 1fr}
+    .split{grid-template-columns:1fr;gap:30px}
+}
+@media(max-width:600px){
+    .hero h1{letter-spacing:-2px}
+    .grid{grid-template-columns:1fr}
+    .section{padding:80px 0}
+    .panel{padding:27px}
+    .footer-inner{flex-direction:column;align-items:flex-start}
+    .footer-links{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important;transition:none!important}
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header" id="header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo">IFOUND<span class="logo-dot">.</span></a>
+
+        <nav class="main-nav" id="nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="ifound-app.html">IFOUND APP</a>
+            <a href="products.html">Products</a>
+            <a href="research.html">Research</a>
+            <a href="vision.html">Vision</a>
+            <a href="founder.html">Founder</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+
+    <div class="container hero-content reveal">
+        <div class="eyebrow">Technology • Research • Innovation</div>
+
+        <h1>
+            Building Technology.<br>
+            Exploring <span>Knowledge.</span><br>
+            Shaping What’s Next.
+        </h1>
+        
+
+        <p>
+            IFOUND is a technology and innovation organization developing
+            digital platforms, intelligent applications, research initiatives,
+            and knowledge solutions designed to make discovery and useful
+            information more accessible to people around the world.
+        </p>
+
+        <div class="actions">
+            <a href="products.html" class="btn btn-primary">Explore Our Products</a>
+            <a href="about.html" class="btn btn-secondary">Discover IFOUND</a>
+        </div>
+        <!-- IFOUND APP DOWNLOAD BUTTON -->
+<div class="download-button-wrapper">
+
+    "<a href="https://ifound-568fe.web.app/downloads/IFOUND.apk"
+   class="ifound-download-btn"
+   download>"
+       class="ifound-download-btn"
+       download>
+
+        <span class="download-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v11"></path>
+                <path d="M7 10l5 5 5-5"></path>
+                <path d="M4 20h16"></path>
+            </svg>
+        </span>
+
+        <span class="download-text">DOWNLOAD NOW</span>
+
+    </a>
+
+</div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading reveal">
+            <div class="eyebrow">What We Build</div>
+            <h2>A growing ecosystem of technology and knowledge.</h2>
+            <p>
+                IFOUND brings together digital products, artificial intelligence,
+                scientific research, engineering ideas and educational knowledge
+                under one long-term vision.
+            </p>
+        </div>
+
+        <div class="grid">
+            <article class="card reveal">
+                <div class="icon">◈</div>
+                <h3>Digital Applications</h3>
+                <p>
+                    Practical applications designed to solve real-world problems,
+                    connect people with useful information and simplify discovery.
+                </p>
+            </article>
+
+            <article class="card reveal">
+                <div class="icon">AI</div>
+                <h3>Artificial Intelligence</h3>
+                <p>
+                    Exploring intelligent systems that can help people search,
+                    understand, organize and interact with knowledge.
+                </p>
+            </article>
+
+            <article class="card reveal">
+                <div class="icon">⌁</div>
+                <h3>Scientific Research</h3>
+                <p>
+                    Research directions spanning astronomy, geology, agriculture,
+                    biology, environment, technology and other fields.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container split">
+        <div class="panel reveal">
+            <div class="eyebrow">Our Ecosystem</div>
+            <h3>From useful applications to future research.</h3>
+            <p>
+                The IFOUND ecosystem is designed to grow progressively. Some
+                products are already being developed, while other ideas represent
+                future research and technology directions.
+            </p>
+
+            <ul class="list">
+                <li>Digital platforms and applications</li>
+                <li>Artificial intelligence</li>
+                <li>Scientific and technological research</li>
+                <li>Engineering and robotics</li>
+                <li>Education and knowledge systems</li>
+            </ul>
+        </div>
+
+        <div class="panel reveal">
+            <div class="eyebrow">Our Approach</div>
+            <h3>Technology with purpose.</h3>
+            <p>
+                We believe technology should be useful, understandable,
+                responsible and focused on solving meaningful problems.
+                Research should be guided by curiosity while conclusions remain
+                grounded in evidence.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="cta reveal">
+            <div class="eyebrow">The Journey Continues</div>
+            <h2>Explore the IFOUND ecosystem.</h2>
+            <p>
+                Discover our products, research directions, vision and the people
+                building the organization.
+            </p>
+
+            <div class="actions" style="justify-content:center">
+                <a href="products.html" class="btn btn-primary">View Products</a>
+                <a href="research.html" class="btn btn-secondary">Explore Research</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <div>© <span id="year"></span> IFOUND. All rights reserved.</div>
+
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="research.html">Research</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+const header=document.getElementById("header");
+const nav=document.getElementById("nav");
+const toggle=document.getElementById("menuToggle");
+
+window.addEventListener("scroll",()=>{
+    header.classList.toggle("scrolled",window.scrollY>20);
+});
+
+toggle.addEventListener("click",()=>{
+    nav.classList.toggle("open");
+});
+
+document.querySelectorAll(".main-nav a").forEach(link=>{
+    link.addEventListener("click",()=>nav.classList.remove("open"));
+});
+
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting) entry.target.classList.add("visible");
+    });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+
+</body>
+</html>

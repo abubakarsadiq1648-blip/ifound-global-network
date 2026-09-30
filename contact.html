@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact IFOUND for general inquiries, partnerships, research collaboration and technology discussions.">
+<title>Contact IFOUND | Technology & Research</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<style>
+:root{
+--bg:#030811;
+--soft:#07111f;
+--blue:#1479ff;
+--blue2:#55a7ff;
+--green:#27ae60;
+--green2:#52d98a;
+--text:#e8eef7;
+--muted:#94a5ba;
+--border:rgba(255,255,255,.09)
+}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
+
+html{
+scroll-behavior:smooth
+}
+
+body{
+font-family:Inter,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.7
+}
+
+a{
+text-decoration:none;
+color:inherit
+}
+
+.container{
+width:min(1100px,92%);
+margin:auto
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+transition:.3s
+}
+
+header.scrolled{
+background:rgba(3,8,17,.9);
+backdrop-filter:blur(18px);
+border-bottom:1px solid var(--border)
+}
+
+.header{
+height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between
+}
+
+.logo{
+font-family:"Space Grotesk";
+font-size:1.5rem;
+font-weight:700
+}
+
+.logo span{
+color:var(--green)
+}
+
+nav{
+display:flex;
+gap:25px
+}
+
+nav a{
+color:var(--muted);
+font-size:.9rem
+}
+
+nav a:hover,
+nav a.active{
+color:white
+}
+
+.menu{
+display:none;
+background:none;
+border:0;
+color:white;
+font-size:1.6rem
+}
+
+.hero{
+padding:160px 0 90px;
+background:radial-gradient(
+circle at 80% 25%,
+rgba(20,121,255,.13),
+transparent 35%
+)
+}
+
+.eyebrow{
+color:var(--green2);
+font-size:.77rem;
+letter-spacing:2px;
+text-transform:uppercase;
+font-weight:800;
+margin-bottom:15px
+}
+
+h1,h2,h3{
+font-family:"Space Grotesk"
+}
+
+h1{
+font-size:clamp(3rem,6vw,5.4rem);
+line-height:1;
+letter-spacing:-3px
+}
+
+h1 span{
+color:var(--blue2)
+}
+
+.hero p{
+color:var(--muted);
+max-width:720px;
+font-size:1.08rem;
+margin-top:25px
+}
+
+.section{
+padding:80px 0
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:25px
+}
+
+.info,
+.form{
+padding:35px;
+border:1px solid var(--border);
+border-radius:20px;
+background:var(--soft)
+}
+
+.info h2,
+.form h2{
+font-size:2rem;
+margin-bottom:15px
+}
+
+.info>p,
+.form>p{
+color:var(--muted);
+margin-bottom:25px
+}
+
+.item{
+padding:17px 0;
+border-bottom:1px solid var(--border)
+}
+
+.item strong{
+display:block;
+color:var(--green2);
+font-size:.8rem;
+text-transform:uppercase;
+letter-spacing:1px
+}
+
+.item span{
+color:#d2dbe7;
+font-size:.9rem
+}
+
+form{
+display:grid;
+gap:15px
+}
+
+label{
+font-size:.8rem;
+color:#c9d4e2;
+font-weight:600
+}
+
+input,
+textarea,
+select{
+width:100%;
+margin-top:7px;
+padding:13px 14px;
+background:#030811;
+color:white;
+border:1px solid var(--border);
+border-radius:9px;
+font-family:inherit;
+outline:none
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+border-color:var(--blue)
+}
+
+textarea{
+min-height:140px;
+resize:vertical
+}
+
+button.submit{
+padding:14px;
+border:0;
+border-radius:9px;
+background:var(--blue);
+color:white;
+font-weight:800;
+cursor:pointer;
+transition:.2s
+}
+
+button.submit:hover{
+transform:translateY(-1px);
+filter:brightness(1.1)
+}
+
+button.submit:disabled{
+opacity:.65;
+cursor:not-allowed;
+transform:none
+}
+
+.message{
+display:none;
+margin-top:15px;
+padding:12px;
+border-radius:8px
+}
+
+.message.success{
+background:rgba(39,174,96,.1);
+color:var(--green2);
+border:1px solid rgba(82,217,138,.15)
+}
+
+.message.error{
+background:rgba(255,60,60,.1);
+color:#ff8b8b;
+border:1px solid rgba(255,60,60,.15)
+}
+
+.note{
+margin-top:20px;
+padding:20px;
+border:1px solid var(--border);
+border-radius:14px;
+color:var(--muted);
+font-size:.85rem
+}
+
+footer{
+border-top:1px solid var(--border);
+padding:35px 0;
+color:var(--muted)
+}
+
+.footer{
+display:flex;
+justify-content:space-between
+}
+
+.reveal{
+opacity:0;
+transform:translateY(25px);
+transition:.7s
+}
+
+.reveal.visible{
+opacity:1;
+transform:none
+}
+
+@media(max-width:900px){
+
+nav{
+display:none;
+position:absolute;
+top:76px;
+left:4%;
+right:4%;
+padding:25px;
+background:var(--soft);
+flex-direction:column;
+border:1px solid var(--border);
+border-radius:15px
+}
+
+nav.open{
+display:flex
+}
+
+.menu{
+display:block
+}
+
+.contact-grid{
+grid-template-columns:1fr
+}
+
+}
+
+@media(max-width:600px){
+
+.footer{
+flex-direction:column;
+gap:10px
+}
+
+.info,
+.form{
+padding:25px
+}
+
+h1{
+letter-spacing:-2px
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header id="header">
+
+<div class="container header">
+
+<a href="index.html" class="logo">
+IFOUND<span>.</span>
+</a>
+
+<nav id="nav">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="products.html">Products</a>
+<a href="research.html">Research</a>
+<a href="vision.html">Vision</a>
+<a href="founder.html">Founder</a>
+<a href="contact.html" class="active">Contact</a>
+
+</nav>
+
+<button class="menu" id="menu">☰</button>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="container reveal">
+
+<div class="eyebrow">
+Contact IFOUND
+</div>
+
+<h1>
+Let's talk about
+<span>technology, research & ideas.</span>
+</h1>
+
+<p>
+Whether you are interested in our products, research directions,
+partnership opportunities or the future of IFOUND, this is the starting point
+for a conversation.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container contact-grid">
+
+
+<!-- INFORMATION -->
+
+<div class="info reveal">
+
+<div class="eyebrow">
+Connect With Us
+</div>
+
+<h2>
+What would you like to discuss?
+</h2>
+
+<p>
+Choose the area that best describes your inquiry.
+</p>
+
+
+<div class="item">
+
+<strong>Product</strong>
+
+<span>
+Questions about IFOUND applications and products.
+</span>
+
+</div>
+
+
+<div class="item">
+
+<strong>Research</strong>
+
+<span>
+Scientific, technology or knowledge research collaboration.
+</span>
+
+</div>
+
+
+<div class="item">
+
+<strong>Partnership</strong>
+
+<span>
+Business, technology or strategic partnership discussions.
+</span>
+
+</div>
+
+
+<div class="item">
+
+<strong>Technology</strong>
+
+<span>
+Questions about our technology and development direction.
+</span>
+
+</div>
+
+
+<div class="item">
+
+<strong>General</strong>
+
+<span>
+Other inquiries concerning IFOUND.
+</span>
+
+</div>
+
+</div>
+
+
+<!-- CONTACT FORM -->
+
+<div class="form reveal">
+
+<div class="eyebrow">
+Send an Inquiry
+</div>
+
+<h2>
+Start a conversation.
+</h2>
+
+<p>
+Send your message directly to the official IFOUND support team.
+</p>
+
+
+<form id="contactForm">
+
+
+<label>
+
+Name
+
+<input
+type="text"
+id="name"
+name="name"
+required
+placeholder="Your name"
+autocomplete="name"
+>
+
+</label>
+
+
+<label>
+
+Email
+
+<input
+type="email"
+id="email"
+name="email"
+required
+placeholder="Your email"
+autocomplete="email"
+>
+
+</label>
+
+
+<label>
+
+Inquiry Type
+
+<select
+id="type"
+name="type"
+required
+>
+
+<option value="">
+Select an option
+</option>
+
+<option value="Product">
+Product
+</option>
+
+<option value="Research">
+Research
+</option>
+
+<option value="Partnership">
+Partnership
+</option>
+
+<option value="Technology">
+Technology
+</option>
+
+<option value="General">
+General
+</option>
+
+</select>
+
+</label>
+
+
+<label>
+
+Message
+
+<textarea
+id="message"
+name="message"
+required
+placeholder="Tell us how we can help..."
+></textarea>
+
+</label>
+
+
+<button
+class="submit"
+type="submit"
+id="submitButton"
+>
+Send Message
+</button>
+
+
+<div
+class="message success"
+id="success"
+>
+Your message has been sent successfully to the IFOUND support team.
+</div>
+
+
+<div
+class="message error"
+id="error"
+>
+Sorry, your message could not be sent. Please try again.
+</div>
+
+
+</form>
+
+
+<div class="note">
+
+<strong>Privacy:</strong>
+Do not enter passwords, payment information or other sensitive information
+into this form.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="container footer">
+
+<div>
+© <span id="year"></span> IFOUND. All rights reserved.
+</div>
+
+<div>
+Technology • Research • Innovation
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =========================================
+   IFOUND EMAILJS CONFIGURATION
+========================================= */
+
+const EMAILJS_PUBLIC_KEY = "SKjinugusYz6tHxSU";
+
+const EMAILJS_SERVICE_ID = "service_0fgp3er";
+
+const EMAILJS_TEMPLATE_ID = "template_t3nuacj";
+
+
+/* Initialize EmailJS */
+
+emailjs.init({
+publicKey: EMAILJS_PUBLIC_KEY
+});
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+const header = document.getElementById("header");
+
+const nav = document.getElementById("nav");
+
+const menu = document.getElementById("menu");
+
+
+menu.onclick = () => {
+nav.classList.toggle("open");
+};
+
+
+window.addEventListener("scroll", () => {
+
+header.classList.toggle(
+"scrolled",
+window.scrollY > 20
+);
+
+});
+
+
+document.querySelectorAll("nav a").forEach(a => {
+
+a.onclick = () => {
+nav.classList.remove("open");
+};
+
+});
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+const observer = new IntersectionObserver(
+entries => {
+
+entries.forEach(e => {
+
+if(e.isIntersecting){
+
+e.target.classList.add("visible");
+
+}
+
+});
+
+},
+{
+threshold:.1
+}
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(e => observer.observe(e));
+
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+const contactForm =
+document.getElementById("contactForm");
+
+const submitButton =
+document.getElementById("submitButton");
+
+const successMessage =
+document.getElementById("success");
+
+const errorMessage =
+document.getElementById("error");
+
+
+contactForm.addEventListener(
+"submit",
+async function(e){
+
+e.preventDefault();
+
+
+/* Hide previous messages */
+
+successMessage.style.display = "none";
+
+errorMessage.style.display = "none";
+
+
+/* Prevent multiple clicks */
+
+submitButton.disabled = true;
+
+submitButton.textContent = "Sending...";
+
+
+try{
+
+/*
+   EmailJS automatically reads:
+
+   name
+   email
+   type
+   message
+
+   because those are the form
+   field names.
+*/
+
+await emailjs.sendForm(
+EMAILJS_SERVICE_ID,
+EMAILJS_TEMPLATE_ID,
+contactForm
+);
+
+
+/* Success */
+
+successMessage.style.display = "block";
+
+submitButton.textContent = "Message Sent ✓";
+
+contactForm.reset();
+
+
+/* Return button to normal after a few seconds */
+
+setTimeout(() => {
+
+submitButton.disabled = false;
+
+submitButton.textContent = "Send Message";
+
+},4000);
+
+
+}
+
+catch(error){
+
+console.error(
+"IFOUND EmailJS Error:",
+error
+);
+
+
+errorMessage.style.display = "block";
+
+submitButton.disabled = false;
+
+submitButton.textContent = "Send Message";
+
+}
+
+});
+
+
+/* =========================================
+   CURRENT YEAR
+========================================= */
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+</script>
+
+</body>
+</html>

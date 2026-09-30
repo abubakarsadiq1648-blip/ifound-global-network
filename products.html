@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore the IFOUND product ecosystem, applications, artificial intelligence, engineering and future technology directions.">
+<title>IFOUND Products | Applications & Future Technology</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#030811;--soft:#07111f;--blue:#1479ff;--blue2:#55a7ff;
+--green:#27ae60;--green2:#52d98a;--white:#fff;--text:#e8eef7;
+--muted:#94a5ba;--border:rgba(255,255,255,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{position:fixed;top:0;width:100%;z-index:1000;transition:.3s}
+header.scrolled{background:rgba(3,8,17,.9);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.header-inner{height:76px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:"Space Grotesk";font-size:1.55rem;font-weight:700}
+.logo span{color:var(--green)}
+nav{display:flex;gap:27px}
+nav a{font-size:.9rem;color:var(--muted)}
+nav a:hover,nav a.active{color:white}
+.menu{display:none;background:none;border:0;color:white;font-size:1.6rem}
+.hero{padding:160px 0 90px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:550px;height:550px;border-radius:50%;background:var(--blue);filter:blur(130px);opacity:.13;right:-180px;top:-150px}
+.eyebrow{color:var(--green2);font-size:.78rem;letter-spacing:2px;text-transform:uppercase;font-weight:800;margin-bottom:16px}
+h1,h2,h3{font-family:"Space Grotesk"}
+h1{font-size:clamp(3rem,6vw,5.5rem);line-height:1;letter-spacing:-3px;max-width:850px}
+.hero h1 span{color:var(--blue2)}
+/* =========================================================
+   IFOUND DOWNLOAD NOW BUTTON
+========================================================= */
+
+.download-button-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px 0;
+}
+
+/* Main button */
+
+.ifound-download-btn{
+    position:relative;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+
+    min-width:300px;
+    height:76px;
+
+    padding:0 32px;
+
+    color:#ffffff;
+    background:
+        linear-gradient(
+            180deg,
+            #238cff 0%,
+            #1479ff 45%,
+            #075dc9 100%
+        );
+
+    border:3px solid #0755b5;
+    border-radius:14px;
+
+    font-family:"Space Grotesk", sans-serif;
+    font-size:1.35rem;
+    font-weight:800;
+    letter-spacing:.8px;
+
+    text-decoration:none;
+
+    box-shadow:
+        0 5px 0 #03428e,
+        0 10px 20px rgba(0,0,0,.30),
+        0 0 18px rgba(20,121,255,.45),
+        inset 0 2px 2px rgba(255,255,255,.45),
+        inset 0 -5px 10px rgba(0,50,130,.20);
+
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        background .2s ease;
+
+    overflow:hidden;
+
+    cursor:pointer;
+}
+
+/* Bright reflection across the button */
+
+.ifound-download-btn::before{
+    content:"";
+
+    position:absolute;
+    top:3px;
+    left:8%;
+    right:8%;
+
+    height:35%;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.35),
+            rgba(255,255,255,0)
+        );
+
+    pointer-events:none;
+}
+
+/* Animated light */
+
+.ifound-download-btn::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:45%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    transform:skewX(-20deg);
+
+    animation:downloadShine 3.5s infinite;
+
+    pointer-events:none;
+}
+
+/* Download icon */
+
+.download-icon{
+    position:relative;
+    z-index:2;
+
+    width:43px;
+    height:43px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:9px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        inset 0 2px 4px rgba(255,255,255,.20),
+        0 3px 8px rgba(0,0,0,.18);
+}
+
+/* SVG icon */
+
+.download-icon svg{
+    width:28px;
+    height:28px;
+
+    fill:none;
+    stroke:#ffffff;
+    stroke-width:2.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+/* Text */
+
+.download-text{
+    position:relative;
+    z-index:2;
+
+    text-shadow:
+        0 2px 3px rgba(0,0,0,.30);
+}
+
+/* Hover */
+
+.ifound-download-btn:hover{
+    transform:translateY(-3px);
+
+    background:
+        linear-gradient(
+            180deg,
+            #39a0ff 0%,
+            #1479ff 45%,
+            #0866dc 100%
+        );
+
+    box-shadow:
+        0 7px 0 #03428e,
+        0 15px 30px rgba(0,0,0,.35),
+        0 0 30px rgba(20,121,255,.65),
+        inset 0 2px 3px rgba(255,255,255,.50);
+}
+
+/* ACTIVE / PRESSED STATE */
+
+.ifound-download-btn:active{
+    transform:translateY(4px);
+
+    box-shadow:
+        0 1px 0 #03428e,
+        0 4px 10px rgba(0,0,0,.25),
+        0 0 15px rgba(20,121,255,.40),
+        inset 0 3px 8px rgba(0,0,0,.25);
+
+    background:
+        linear-gradient(
+            180deg,
+            #075dc9,
+            #1479ff
+        );
+}
+
+/* Keyboard accessibility */
+
+.ifound-download-btn:focus-visible{
+    outline:3px solid rgba(82,217,138,.8);
+    outline-offset:5px;
+}
+
+/* Shining animation */
+
+@keyframes downloadShine{
+
+    0%{
+        left:-100%;
+    }
+
+    45%,
+    100%{
+        left:130%;
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .ifound-download-btn{
+        width:100%;
+        min-width:0;
+        height:70px;
+
+        padding:0 20px;
+
+        font-size:1.05rem;
+        gap:13px;
+
+        border-radius:13px;
+    }
+
+    .download-icon{
+        width:40px;
+        height:40px;
+    }
+
+    .download-icon svg{
+        width:25px;
+        height:25px;
+    }
+
+}
+.hero p{color:var(--muted);max-width:760px;margin-top:25px;font-size:1.08rem}
+.section{padding:95px 0}
+.heading{max-width:760px;margin-bottom:45px}
+.heading h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.1;margin-bottom:15px}
+.heading p{color:var(--muted)}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.product{
+padding:34px;border:1px solid var(--border);border-radius:20px;
+background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+transition:.35s;position:relative;overflow:hidden
+}
+.product:hover{transform:translateY(-7px);border-color:rgba(85,167,255,.35)}
+.product .number{font-family:"Space Grotesk";font-size:.8rem;color:var(--green2);letter-spacing:2px}
+.product h3{font-size:1.55rem;margin:12px 0}
+.product p{color:var(--muted);font-size:.93rem}
+.status{
+display:inline-block;margin-top:20px;padding:6px 10px;border-radius:20px;
+font-size:.72rem;font-weight:700;background:rgba(39,174,96,.12);color:var(--green2)
+}
+.status.future{background:rgba(20,121,255,.12);color:var(--blue2)}
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tech{
+padding:27px;border:1px solid var(--border);border-radius:16px;background:var(--soft)
+}
+.tech h3{font-size:1.15rem;margin-bottom:10px}
+.tech p{color:var(--muted);font-size:.9rem}
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.step{padding:25px;border-top:2px solid var(--blue);background:var(--soft)}
+.step span{color:var(--green2);font-weight:800;font-size:.8rem}
+.step h3{margin:10px 0}
+.step p{font-size:.85rem;color:var(--muted)}
+.cta{padding:60px 30px;text-align:center;border:1px solid var(--border);border-radius:25px;background:linear-gradient(135deg,rgba(20,121,255,.12),rgba(39,174,96,.07))}
+.cta h2{font-size:2.5rem}
+.cta p{color:var(--muted);max-width:650px;margin:12px auto 25px}
+.btn{display:inline-block;padding:12px 20px;border-radius:9px;font-weight:700;margin:5px}
+.primary{background:var(--blue)}
+.secondary{border:1px solid var(--border)}
+footer{margin-top:80px;border-top:1px solid var(--border);padding:35px 0;color:var(--muted)}
+.footer{display:flex;justify-content:space-between;gap:20px}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){
+nav{display:none;position:absolute;top:76px;left:4%;right:4%;padding:25px;flex-direction:column;background:var(--soft);border:1px solid var(--border);border-radius:15px}
+nav.open{display:flex}.menu{display:block}.tech-grid{grid-template-columns:1fr 1fr}.roadmap{grid-template-columns:1fr 1fr}
+}
+@media(max-width:650px){
+.products,.tech-grid,.roadmap{grid-template-columns:1fr}.hero{padding-top:140px}h1{letter-spacing:-2px}.footer{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<header id="header">
+<div class="container header-inner">
+<a href="index.html" class="logo">IFOUND<span>.</span></a>
+<nav id="nav">
+<a href="index.html">Home</a>
+<a href="ifound-app.html">IFOUND APP</a>
+<a href="about.html">About</a>
+<a href="products.html" class="active">Products</a>
+<a href="research.html">Research</a>
+<a href="vision.html">Vision</a>
+<a href="founder.html">Founder</a>
+<a href="contact.html">Contact</a>
+</nav>
+<button class="menu" id="menu">☰</button>
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="container reveal">
+<div class="eyebrow">IFOUND Product Center</div>
+<h1>Technology designed to <span>discover, connect & understand.</span></h1>
+<!-- IFOUND APP DOWNLOAD BUTTON -->
+<div class="download-button-wrapper">
+
+   <a href="https://ifound-568fe.web.app/downloads/IFOUND.apk"
+   class="ifound-download-btn"
+   download>"
+       class="ifound-download-btn"
+       download>
+
+        <span class="download-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v11"></path>
+                <path d="M7 10l5 5 5-5"></path>
+                <path d="M4 20h16"></path>
+            </svg>
+        </span>
+
+        <span class="download-text">DOWNLOAD NOW</span>
+
+    </a>
+
+</div>
+<p>
+The IFOUND product ecosystem combines practical digital applications,
+artificial intelligence, research technologies and long-term ideas for
+building useful intelligent systems.
+</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="heading reveal">
+<div class="eyebrow">Applications</div>
+<h2>Our growing family of applications.</h2>
+<p>Some applications are currently being developed while others represent future product and research directions.</p>
+</div>
+
+<div class="products">
+
+<article class="product reveal">
+<div class="number">01 / CURRENT PRODUCT</div>
+<h3>IFOUND Global Network</h3>
+<p>
+A global shop and product discovery platform designed to help people find
+products and relevant physical shops. Users can search for products and
+discover nearby or relevant businesses.
+</p>
+<span class="status">Current / In Development</span>
+</article>
+
+<article class="product reveal">
+<div class="number">02 / DEVELOPMENT</div>
+<h3>Hyperglobal</h3>
+<p>
+A developing application within the wider IFOUND ecosystem. Its long-term
+direction is focused on global information, connectivity and intelligent
+digital experiences.
+</p>
+<span class="status">In Development</span>
+</article>
+
+<article class="product reveal">
+<div class="number">03 / FUTURE AI</div>
+<h3>Qur’an AI</h3>
+<p>
+A future intelligent knowledge project exploring how artificial intelligence
+can help people interact with Qur’anic and Islamic knowledge responsibly,
+with emphasis on source-based information.
+</p>
+<span class="status future">Future Project</span>
+</article>
+
+<article class="product reveal">
+<div class="number">04 / FUTURE AI</div>
+<h3>Geology AI</h3>
+<p>
+A future research-oriented intelligent system exploring geological information,
+earth materials, geological concepts, field observations and educational
+knowledge.
+</p>
+<span class="status future">Future Project</span>
+</article>
+
+<article class="product reveal">
+<div class="number">05 / FUTURE AI</div>
+<h3>Agriculture AI</h3>
+<p>
+A future technology direction exploring intelligent agricultural knowledge,
+crop information, environmental conditions and practical decision-support
+systems.
+</p>
+<span class="status future">Future Project</span>
+</article>
+
+<article class="product reveal">
+<div class="number">06 / FUTURE SYSTEMS</div>
+<h3>Future Intelligent Applications</h3>
+<p>
+Additional applications may emerge around education, science, business,
+environment, knowledge management and other areas where technology can
+provide useful assistance.
+</p>
+<span class="status future">Concept / Research</span>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="heading reveal">
+<div class="eyebrow">Technology Directions</div>
+<h2>Beyond applications.</h2>
+<p>
+IFOUND's long-term technology direction extends into several interconnected fields.
+</p>
+</div>
+
+<div class="tech-grid">
+<div class="tech reveal"><h3>Artificial Intelligence</h3><p>Intelligent assistants, knowledge systems, search technologies and responsible AI applications.</p></div>
+<div class="tech reveal"><h3>Robotics</h3><p>Long-term exploration of intelligent machines, automation and physical systems.</p></div>
+<div class="tech reveal"><h3>Mechanical Technology</h3><p>Engineering concepts involving machines, mechanisms, automation and practical technologies.</p></div>
+<div class="tech reveal"><h3>Scientific Computing</h3><p>Using computation and software to support scientific research and analysis.</p></div>
+<div class="tech reveal"><h3>Digital Infrastructure</h3><p>Data systems, information platforms and infrastructure capable of supporting global digital services.</p></div>
+<div class="tech reveal"><h3>Knowledge Systems</h3><p>Technology for organizing, discovering, understanding and communicating useful knowledge.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="heading reveal">
+<div class="eyebrow">Long-Term Roadmap</div>
+<h2>Growing from applications into an ecosystem.</h2>
+</div>
+
+<div class="roadmap">
+<div class="step reveal"><span>PHASE 01</span><h3>Applications</h3><p>Build useful digital products that solve practical problems.</p></div>
+<div class="step reveal"><span>PHASE 02</span><h3>AI</h3><p>Develop intelligent systems around search, knowledge and assistance.</p></div>
+<div class="step reveal"><span>PHASE 03</span><h3>Research</h3><p>Expand into scientific and technological research.</p></div>
+<div class="step reveal"><span>PHASE 04</span><h3>Ecosystem</h3><p>Connect products, knowledge, research and technology into a wider ecosystem.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="cta reveal">
+<h2>Explore a specific IFOUND product.</h2>
+<p>Learn more about IFOUND Global Network and the direction of the wider technology ecosystem.</p>
+<a class="btn primary" href="ifound-app.html">IFOUND Global Network</a>
+<a class="btn secondary" href="hyperglobal.html">Hyperglobal</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container footer">
+<div>© <span id="year"></span> IFOUND. All rights reserved.</div>
+<div>Technology • Research • Innovation</div>
+</div>
+</footer>
+
+<script>
+const header=document.getElementById("header");
+const nav=document.getElementById("nav");
+document.getElementById("menu").onclick=()=>nav.classList.toggle("open");
+
+window.addEventListener("scroll",()=>{
+header.classList.toggle("scrolled",scrollY>20);
+});
+
+document.querySelectorAll("nav a").forEach(a=>{
+a.onclick=()=>nav.classList.remove("open");
+});
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")});
+},{threshold:.1});
+
+document.querySelectorAll(".reveal").forEach(e=>observer.observe(e));
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+
+</body>
+</html>

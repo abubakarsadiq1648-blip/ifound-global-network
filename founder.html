@@ -1,0 +1,1518 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Abubakar Sadiq Idriss — Founder and CEO of IFOUND, technology researcher, developer and creative professional.">
+<meta name="author" content="Abubakar Sadiq Idriss"><title>Founder & CEO | Abubakar Sadiq Idriss | IFOUND</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><style>
+
+:root{
+    --bg:#030811;
+    --bg-soft:#07111f;
+    --bg-card:rgba(255,255,255,.045);
+
+    --blue:#1479ff;
+    --blue-light:#55a7ff;
+
+    --green:#27ae60;
+    --green-light:#52d98a;
+
+    --white:#ffffff;
+    --text:#e8eef7;
+    --muted:#94a5ba;
+    --muted-light:#bdcad9;
+
+    --border:rgba(255,255,255,.09);
+    --border-light:rgba(255,255,255,.16);
+
+    --shadow:0 30px 90px rgba(0,0,0,.35);
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+body.no-scroll{
+    overflow:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    transition:.35s ease;
+}
+
+.site-header.scrolled{
+    background:rgba(3,8,17,.88);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:1.55rem;
+    font-weight:700;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:var(--green);
+}
+
+.main-nav{
+    display:flex;
+    align-items:center;
+    gap:27px;
+}
+
+.main-nav a{
+    color:var(--muted);
+    font-size:.9rem;
+    transition:.25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active{
+    color:var(--white);
+}
+
+.menu-toggle{
+    display:none;
+    border:0;
+    background:none;
+    color:white;
+    font-size:1.65rem;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:150px 0 100px;
+    overflow:hidden;
+}
+
+.hero-glow{
+    position:absolute;
+    width:550px;
+    height:550px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.15;
+    pointer-events:none;
+}
+
+.hero-glow.one{
+    background:var(--blue);
+    top:-200px;
+    right:-150px;
+}
+
+.hero-glow.two{
+    background:var(--green);
+    bottom:-300px;
+    left:-200px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    color:var(--green-light);
+    font-size:.76rem;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+}
+
+.eyebrow::before{
+    content:"";
+    width:28px;
+    height:2px;
+    background:var(--green);
+}
+
+.hero h1{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(3.2rem,6vw,6rem);
+    line-height:.98;
+    letter-spacing:-4px;
+    margin-bottom:28px;
+}
+
+.hero h1 span{
+    background:linear-gradient(
+        90deg,
+        var(--blue-light),
+        var(--green-light)
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-description{
+    color:var(--muted);
+    font-size:1.08rem;
+    max-width:720px;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:32px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:13px 21px;
+    border-radius:10px;
+
+    font-weight:700;
+    font-size:.9rem;
+
+    transition:.3s ease;
+}
+
+.btn-primary{
+    background:var(--blue);
+    color:white;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(20,121,255,.25);
+}
+
+.btn-secondary{
+    border:1px solid var(--border-light);
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:rgba(255,255,255,.06);
+    transform:translateY(-3px);
+}
+
+/* =========================
+   PROFILE VISUAL
+========================= */
+
+.profile-visual{
+    position:relative;
+}
+
+.profile-frame{
+    position:relative;
+    border-radius:28px;
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,121,255,.12),
+            rgba(39,174,96,.05)
+        );
+
+    min-height:540px;
+
+    box-shadow:var(--shadow);
+}
+
+.profile-frame img{
+    width:100%;
+    height:540px;
+    object-fit:cover;
+}
+
+.profile-placeholder{
+    min-height:540px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px;
+}
+
+.profile-placeholder-inner{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.initials{
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--green)
+        );
+
+    color:white;
+
+    font-family:"Space Grotesk";
+    font-size:3.3rem;
+    font-weight:700;
+
+    box-shadow:
+        0 20px 50px rgba(20,121,255,.25);
+}
+
+.placeholder-text{
+    margin-top:20px;
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+.profile-label{
+    position:absolute;
+    left:22px;
+    bottom:22px;
+
+    padding:13px 17px;
+
+    border:1px solid rgba(255,255,255,.13);
+    background:rgba(3,8,17,.72);
+    backdrop-filter:blur(15px);
+
+    border-radius:12px;
+
+    font-size:.82rem;
+}
+
+.profile-label strong{
+    display:block;
+    color:white;
+}
+
+.profile-label span{
+    color:var(--green-light);
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section{
+    padding:110px 0;
+}
+
+.section-heading{
+    max-width:760px;
+    margin-bottom:50px;
+}
+
+.section-heading h2{
+    font-family:"Space Grotesk";
+    font-size:clamp(2.2rem,4vw,3.5rem);
+    line-height:1.08;
+    letter-spacing:-1.5px;
+    margin-bottom:16px;
+}
+
+.section-heading p{
+    color:var(--muted);
+}
+
+/* =========================
+   ABOUT FOUNDER
+========================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.glass-card{
+    padding:35px;
+
+    border:1px solid var(--border);
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.015)
+        );
+
+    transition:.35s ease;
+}
+
+.glass-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(85,167,255,.25);
+}
+
+.glass-card h3{
+    font-family:"Space Grotesk";
+    font-size:1.5rem;
+    margin-bottom:15px;
+}
+
+.glass-card p{
+    color:var(--muted);
+}
+
+/* =========================
+   EDUCATION / EXPERIENCE
+========================= */
+
+.timeline{
+    position:relative;
+    max-width:900px;
+}
+
+.timeline::before{
+    content:"";
+
+    position:absolute;
+    left:8px;
+    top:0;
+    bottom:0;
+
+    width:1px;
+
+    background:var(--border);
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:45px;
+    padding-bottom:40px;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-dot{
+    position:absolute;
+    left:3px;
+    top:7px;
+
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    background:var(--blue);
+
+    box-shadow:
+        0 0 0 5px rgba(20,121,255,.1);
+}
+
+.timeline-item small{
+    color:var(--green-light);
+    font-weight:700;
+    font-size:.78rem;
+    letter-spacing:1px;
+}
+
+.timeline-item h3{
+    font-family:"Space Grotesk";
+    font-size:1.35rem;
+    margin:7px 0;
+}
+
+.timeline-item p{
+    color:var(--muted);
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.skill{
+    padding:22px;
+
+    border:1px solid var(--border);
+    border-radius:15px;
+
+    background:var(--bg-soft);
+
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-5px);
+    border-color:rgba(82,217,138,.25);
+}
+
+.skill-number{
+    color:var(--green-light);
+    font-size:.7rem;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.skill h3{
+    font-family:"Space Grotesk";
+    font-size:1rem;
+    margin-top:8px;
+}
+
+/* =========================
+   PHOTOGRAPHY
+========================= */
+
+.photography-section{
+    position:relative;
+    overflow:hidden;
+}
+
+.photo-intro{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:30px;
+    margin-bottom:45px;
+}
+
+.photo-intro-text{
+    max-width:720px;
+}
+
+.photo-intro-text h2{
+    font-family:"Space Grotesk";
+    font-size:clamp(2.2rem,4vw,3.5rem);
+    line-height:1.05;
+    margin-bottom:15px;
+}
+
+.photo-intro-text p{
+    color:var(--muted);
+}
+
+.photo-note{
+    padding:15px 18px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    color:var(--muted);
+    font-size:.8rem;
+    white-space:nowrap;
+}
+
+
+
+.photo-gallery{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    grid-auto-rows:220px;
+    gap:15px;
+}
+
+.photo-card{
+    position:relative;
+    overflow:hidden;
+
+    border-radius:18px;
+    border:1px solid var(--border);
+
+    cursor:pointer;
+
+    background:var(--bg-soft);
+}
+
+.photo-card:nth-child(1){
+    grid-column:span 5;
+    grid-row:span 2;
+}
+
+.photo-card:nth-child(2){
+    grid-column:span 3;
+}
+
+.photo-card:nth-child(3){
+    grid-column:span 4;
+}
+
+.photo-card:nth-child(4){
+    grid-column:span 4;
+}
+
+.photo-card:nth-child(5){
+    grid-column:span 3;
+}
+
+.photo-card:nth-child(6){
+    grid-column:span 5;
+}
+
+.photo-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:
+        transform .6s ease,
+        filter .6s ease;
+}
+
+.photo-card:hover img{
+    transform:scale(1.07);
+    filter:brightness(.65);
+}
+
+.photo-overlay{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:flex-end;
+
+    padding:20px;
+
+    background:
+        linear-gradient(
+            transparent 45%,
+            rgba(0,0,0,.75)
+        );
+
+    opacity:0;
+
+    transition:.35s;
+}
+
+.photo-card:hover .photo-overlay{
+    opacity:1;
+}
+
+.photo-overlay span{
+    color:white;
+    font-weight:700;
+    font-size:.85rem;
+}
+
+/* Placeholder photography cards */
+
+.photo-placeholder{
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,121,255,.08),
+            rgba(39,174,96,.06)
+        );
+}
+
+.photo-placeholder div{
+    color:var(--muted);
+    font-size:.8rem;
+}
+
+.photo-placeholder strong{
+    display:block;
+    color:white;
+    font-family:"Space Grotesk";
+    font-size:1rem;
+    margin-bottom:5px;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.92);
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    z-index:3000;
+
+    padding:30px;
+}
+
+.lightbox.open{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:min(1100px,95vw);
+    max-height:85vh;
+    object-fit:contain;
+
+    border-radius:10px;
+}
+
+.lightbox-close{
+    position:absolute;
+    top:22px;
+    right:25px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:1.5rem;
+
+    cursor:pointer;
+}
+
+/* =========================
+   FOUNDER VISION
+========================= */
+
+.vision-box{
+    position:relative;
+
+    padding:65px 50px;
+
+    border-radius:28px;
+
+    border:1px solid var(--border);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20,121,255,.12),
+            rgba(39,174,96,.06)
+        );
+
+    overflow:hidden;
+}
+
+.vision-box::after{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:var(--blue);
+
+    filter:blur(100px);
+
+    opacity:.1;
+
+    right:-100px;
+    bottom:-150px;
+}
+
+.vision-box blockquote{
+    position:relative;
+    z-index:2;
+
+    font-family:"Space Grotesk";
+
+    font-size:clamp(1.7rem,3.2vw,3rem);
+
+    line-height:1.25;
+
+    max-width:900px;
+}
+
+.vision-box p{
+    position:relative;
+    z-index:2;
+
+    color:var(--muted);
+
+    max-width:750px;
+
+    margin-top:20px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    padding:70px 40px;
+
+    text-align:center;
+
+    border-radius:28px;
+
+    border:1px solid var(--border);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20,121,255,.13),
+            rgba(39,174,96,.07)
+        );
+}
+
+.cta h2{
+    font-family:"Space Grotesk";
+    font-size:clamp(2rem,4vw,3.2rem);
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:var(--muted);
+    max-width:650px;
+    margin:auto;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:35px 0;
+    color:var(--muted);
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+    font-size:.85rem;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .main-nav{
+        position:absolute;
+
+        top:78px;
+        left:4%;
+        right:4%;
+
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+
+        padding:25px;
+
+        background:var(--bg-soft);
+
+        border:1px solid var(--border);
+        border-radius:16px;
+
+        box-shadow:var(--shadow);
+    }
+
+    .main-nav.open{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .profile-visual{
+        max-width:650px;
+        margin:auto;
+        width:100%;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .skills-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .photo-gallery{
+        grid-template-columns:repeat(2,1fr);
+        grid-auto-rows:250px;
+    }
+
+    .photo-card:nth-child(n){
+        grid-column:auto;
+        grid-row:auto;
+    }
+
+    .photo-card:first-child{
+        grid-column:span 2;
+    }
+}
+
+@media(max-width:650px){
+
+    .hero{
+        padding-top:130px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .profile-frame,
+    .profile-frame img,
+    .profile-placeholder{
+        min-height:400px;
+        height:400px;
+    }
+
+    .initials{
+        width:130px;
+        height:130px;
+        font-size:2.5rem;
+    }
+
+    .section{
+        padding:80px 0;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
+    .photo-intro{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .photo-note{
+        white-space:normal;
+    }
+
+    .photo-gallery{
+        grid-template-columns:1fr;
+        grid-auto-rows:250px;
+    }
+
+    .photo-card:first-child{
+        grid-column:auto;
+    }
+
+    .vision-box{
+        padding:35px 25px;
+    }
+
+    .cta{
+        padding:45px 25px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        scroll-behavior:auto!important;
+        animation:none!important;
+        transition:none!important;
+    }
+}
+
+</style></head><body><header class="site-header" id="siteHeader"><div class="container header-inner"><a href="index.html" class="logo">
+IFOUND<span>.</span>
+</a><nav class="main-nav" id="mainNav"><a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="ifound-app.html">IFOUND APP</a>
+<a href="products.html">Products</a>
+<a href="research.html">Research</a>
+<a href="vision.html">Vision</a>
+<a href="founder.html" class="active">Founder</a>
+<a href="contact.html">Contact</a>
+
+</nav><button
+class="menu-toggle"
+id="menuToggle"
+aria-label="Open navigation"
+aria-expanded="false">
+☰
+</button>
+
+</div></header><main><!-- =========================
+     HERO
+========================= --><section class="hero"><div class="hero-glow one"></div>
+<div class="hero-glow two"></div><div class="container hero-grid"><div class="hero-content reveal"><div class="eyebrow">
+Founder & CEO
+</div><h1>
+Abubakar Sadiq <span>Idriss.</span>
+</h1><p class="hero-description">Founder and CEO of IFOUND, with interests spanning technology,
+scientific research, digital product development, entrepreneurship,
+leadership and creative work.
+
+</p><div class="hero-actions"><a href="#profile" class="btn btn-primary">
+Explore Founder Profile
+</a><a href="#photography" class="btn btn-secondary">
+View Photography
+</a></div></div><div class="profile-visual reveal"><div class="profile-frame"><!--
+==================================================
+ADD YOUR PROFESSIONAL FOUNDER PHOTO HERE
+
+Replace the placeholder below with:
+
+<img
+src="images/founder.jpg"
+alt="Abubakar Sadiq Idriss — Founder and CEO of IFOUND"
+>
+
+For example:
+
+<div class="profile-frame">
+<img src="images/founder.jpg" alt="Abubakar Sadiq Idriss">
+...
+</div>
+==================================================
+--><div class="profile-placeholder"><div class="profile-placeholder-inner"><div class="initials">
+ASI
+</div><div class="placeholder-text">
+Founder & CEO<br>
+IFOUND
+</div></div></div><div class="profile-label"><strong>Abubakar Sadiq Idriss</strong>
+<span>Founder & CEO · IFOUND</span>
+
+</div></div></div></div></section><!-- =========================
+     PROFILE
+========================= --><section class="section" id="profile"><div class="container"><div class="section-heading reveal"><div class="eyebrow">
+The Founder
+</div><h2>
+Building technology with a long-term vision.
+</h2><p>
+The founder's interests bring together technology, scientific curiosity,
+education, entrepreneurship and creative work.
+</p></div><div class="about-grid"><article class="glass-card reveal"><h3>Who I Am</h3><p>Abubakar Sadiq Idriss is the founder and CEO of IFOUND, a technology
+and innovation organization focused on digital products, research,
+knowledge and future technology.
+
+</p><p style="margin-top:15px">His interests include website development, programming, digital
+product development, scientific research, technology, entrepreneurship,
+creative design and photography.
+
+</p></article><article class="glass-card reveal"><h3>Why IFOUND Exists</h3><p>IFOUND was created with a broader purpose than building a single
+application. The organization is intended to grow into a technology,
+research and knowledge ecosystem.
+
+</p><p style="margin-top:15px">The long-term goal is to create useful technologies while exploring
+questions across science, engineering, artificial intelligence,
+education and knowledge.
+
+</p></article></div></div></section><!-- =========================
+     EDUCATION & JOURNEY
+========================= --><section class="section"><div class="container"><div class="section-heading reveal"><div class="eyebrow">
+Education & Journey
+</div><h2>
+Learning, leadership and continuous development.
+</h2><p>
+The founder's journey combines academic education, leadership,
+technology development and creative interests.
+</p></div><div class="timeline"><div class="timeline-item reveal"><div class="timeline-dot"></div><small>ACADEMIC DEVELOPMENT</small>
+
+<h3>
+Geology & Earth Science
+</h3><p>Currently studying Geology at Yobe State University, with interests
+in Earth science, rocks, geological processes and scientific research.
+
+</p></div><div class="timeline-item reveal"><div class="timeline-dot"></div><small>LEADERSHIP</small>
+
+<h3>
+Student Leadership & Service
+</h3><p>Leadership experiences have included roles such as MSSN Legal Adviser,
+SIC Auditor General and school House Captain.
+
+</p></div><div class="timeline-item reveal"><div class="timeline-dot"></div><small>TECHNOLOGY</small>
+
+<h3>
+Digital Product Development
+</h3><p>Continued learning and practical work in website development,
+programming, digital products and technology research.
+
+</p></div><div class="timeline-item reveal"><div class="timeline-dot"></div><small>CREATIVE DEVELOPMENT</small>
+
+<h3>
+Photography & Digital Creativity
+</h3><p>Photography, graphic design and digital creativity provide another
+dimension to the founder's work, combining technology with visual
+storytelling.
+
+</p></div></div></div></section><!-- =========================
+     SKILLS
+========================= --><section class="section"><div class="container"><div class="section-heading reveal"><div class="eyebrow">
+Capabilities
+</div><h2>
+Areas of interest and expertise.
+</h2><p>
+A combination of technical, research, leadership and creative skills.
+</p></div><div class="skills-grid"><div class="skill reveal">
+<div class="skill-number">01</div>
+<h3>Website Development</h3>
+</div><div class="skill reveal">
+<div class="skill-number">02</div>
+<h3>Programming</h3>
+</div><div class="skill reveal">
+<div class="skill-number">03</div>
+<h3>Digital Products</h3>
+</div><div class="skill reveal">
+<div class="skill-number">04</div>
+<h3>Technology Research</h3>
+</div><div class="skill reveal">
+<div class="skill-number">05</div>
+<h3>Scientific Research</h3>
+</div><div class="skill reveal">
+<div class="skill-number">06</div>
+<h3>Graphic Design</h3>
+</div><div class="skill reveal">
+<div class="skill-number">07</div>
+<h3>Photography</h3>
+</div><div class="skill reveal">
+<div class="skill-number">08</div>
+<h3>Entrepreneurship</h3>
+</div></div></div></section><!-- =========================
+     PHOTOGRAPHY
+========================= --><section class="section photography-section" id="photography"><div class="container"><div class="photo-intro reveal"><div class="photo-intro-text"><div class="eyebrow">
+Photography & Creative Work
+</div><h2>
+Seeing the world through another lens.
+</h2><p>Photography is part of the founder's creative interests.
+This section can serve as a professional portfolio alongside
+the technology and research profile.
+
+</p></div><div class="photo-note">
+FOUNDER OF IFOUND COMPANY
+</div></div><div class="photo-gallery"><!--
+==================================================
+PHOTO 1
+Replace this placeholder with:
+
+
+==================================================
+--><div class="photo-card reveal"><div class="photo-placeholder"><div>
+<strong>Photography 01</strong>
+<img
+src="images/photo1.jpg"
+alt="Photography work 1"
+>
+
+</div></div><div class="photo-overlay">
+<span>Creative Work</span>
+</div></div><!-- PHOTO 2 --><div class="photo-card reveal"><div class="photo-placeholder"><div>
+<strong>Photography 02</strong>
+<img
+src="images/photo2.jpg"
+alt="Photography work 1"
+>
+
+</div></div><div class="photo-overlay">
+<span>Portrait</span>
+</div></div><!-- PHOTO 3 --><div class="photo-card reveal"><div class="photo-placeholder"><div>
+<strong>Photography 03</strong>
+<img
+src="images/photo3.jpg"
+alt="Photography work 1"
+>
+
+</div></div><div class="photo-overlay">
+<span>Event</span>
+</div></div><!-- PHOTO 4 --><div class="photo-card reveal"><div class="photo-placeholder"><div>
+<strong>Photography 04</strong>
+<img
+src="images/photo4.jpg"
+alt="Photography work 1"
+>
+
+</div></div><div class="photo-overlay">
+<span>Creative Photography</span>
+</div></div><!-- PHOTO 5 --><div class="photo-card reveal"><div class="photo-placeholder"><div>
+<strong>Photography 05</strong>
+<img
+src="images/photo5.jpg"
+alt="Photography work 1"
+>
+
+
+</div></div><div class="photo-overlay">
+<span>Photography</span>
+</div></div></div></div></section><!-- =========================
+     FOUNDER'S VISION
+========================= --><section class="section"><div class="container"><div class="vision-box reveal"><div class="eyebrow">
+Founder's Perspective
+</div><blockquote>“Technology should not only make things faster.
+It should help people discover, understand and solve meaningful problems.”
+
+</blockquote><p>This philosophy contributes to the direction of IFOUND as an organization
+that seeks to combine technology, research, knowledge and responsible
+innovation.
+
+</p></div></div></section><!-- =========================
+     COMPANY CONNECTION
+========================= --><section class="section"><div class="container"><div class="section-heading reveal"><div class="eyebrow">
+From Founder to Organization
+</div><h2>
+The vision goes beyond one person.
+</h2><p>The founder's role is to establish direction, develop ideas and help build
+the foundation for an organization that can eventually grow through
+collaboration and a wider team.
+
+</p></div><div class="about-grid"><div class="glass-card reveal"><h3>
+Technology
+</h3><p>Building practical digital products and exploring future intelligent
+systems.
+
+</p></div><div class="glass-card reveal"><h3>
+Research
+</h3><p>Exploring scientific and technological questions across multiple
+disciplines.
+
+</p></div><div class="glass-card reveal"><h3>
+Knowledge
+</h3><p>Making useful information easier to discover, understand and apply.
+
+</p></div><div class="glass-card reveal"><h3>
+Creativity
+</h3><p>Using photography, design and digital creativity to communicate ideas
+visually.
+
+</p></div></div></div></section><!-- =========================
+     CTA
+========================= --><section class="section"><div class="container"><div class="cta reveal"><div class="eyebrow">
+Explore IFOUND
+</div><h2>
+Discover the organization behind the vision.
+</h2><p>Explore IFOUND's products, research directions, mission and long-term
+technology vision.
+
+</p><div class="hero-actions" style="justify-content:center"><a href="about.html" class="btn btn-primary">
+About IFOUND
+</a><a href="products.html" class="btn btn-secondary">
+Explore Products
+</a><a href="research.html" class="btn btn-secondary">
+Research
+</a></div></div></div></section></main><!-- =========================
+     LIGHTBOX
+========================= --><div class="lightbox" id="lightbox"><button class="lightbox-close" id="lightboxClose">
+×
+</button><img id="lightboxImage" src="" alt="Photography preview"></div><!-- =========================
+     FOOTER
+========================= --><footer><div class="container footer-inner"><div>
+© <span id="year"></span> IFOUND.
+All rights reserved.
+</div><div class="footer-links"><a href="about.html">About</a>
+<a href="products.html">Products</a>
+<a href="research.html">Research</a>
+<a href="contact.html">Contact</a>
+
+</div></div></footer><script>
+
+/* =========================
+   HEADER
+========================= */
+
+const header =
+document.getElementById("siteHeader");
+
+window.addEventListener("scroll",()=>{
+
+header.classList.toggle(
+"scrolled",
+window.scrollY > 20
+);
+
+});
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuToggle =
+document.getElementById("menuToggle");
+
+const mainNav =
+document.getElementById("mainNav");
+
+menuToggle.addEventListener("click",()=>{
+
+const open =
+mainNav.classList.toggle("open");
+
+menuToggle.setAttribute(
+"aria-expanded",
+open
+);
+
+});
+
+
+document.querySelectorAll(".main-nav a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+mainNav.classList.remove("open");
+
+menuToggle.setAttribute(
+"aria-expanded",
+"false"
+);
+
+});
+
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},
+
+{
+threshold:.12
+}
+
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(element=>{
+
+observer.observe(element);
+
+});
+
+
+/* =========================
+   PHOTOGRAPHY LIGHTBOX
+========================= */
+
+const lightbox =
+document.getElementById("lightbox");
+
+const lightboxImage =
+document.getElementById("lightboxImage");
+
+const lightboxClose =
+document.getElementById("lightboxClose");
+
+
+document
+.querySelectorAll(".photo-card img")
+.forEach(image=>{
+
+image.addEventListener("click",()=>{
+
+lightboxImage.src =
+image.src;
+
+lightboxImage.alt =
+image.alt;
+
+lightbox.classList.add("open");
+
+document.body.classList.add("no-scroll");
+
+});
+
+});
+
+
+function closeLightbox(){
+
+lightbox.classList.remove("open");
+
+document.body.classList.remove("no-scroll");
+
+lightboxImage.src="";
+
+}
+
+
+lightboxClose.addEventListener(
+"click",
+closeLightbox
+);
+
+
+lightbox.addEventListener(
+"click",
+(event)=>{
+
+if(event.target === lightbox){
+
+closeLightbox();
+
+}
+
+});
+
+
+document.addEventListener(
+"keydown",
+(event)=>{
+
+if(event.key === "Escape"){
+
+closeLightbox();
+
+}
+
+});
+
+
+/* =========================
+   COPYRIGHT YEAR
+========================= */
+
+document.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+</script></body>
+</html>

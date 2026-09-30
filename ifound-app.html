@@ -1,0 +1,5589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="IFOUND Global Network — a global location-aware product, shop and business discovery platform connecting people with the businesses they need.">
+
+<meta name="theme-color" content="#030811">
+
+<title>IFOUND Global Network | Find What You Need. Discover Where It Is.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   IFOUND GLOBAL NETWORK
+   Complete Self-Contained Product Page
+========================================================= */
+
+:root{
+    --bg:#030811;
+    --bg2:#050d19;
+    --soft:#07111f;
+    --soft2:#0a1626;
+
+    --blue:#1479ff;
+    --blue2:#55a7ff;
+    --blue3:#8ac5ff;
+
+    --green:#27ae60;
+    --green2:#52d98a;
+
+    --white:#ffffff;
+    --text:#e8eef7;
+    --muted:#94a5ba;
+    --muted2:#bdcad9;
+
+    --border:rgba(255,255,255,.09);
+    --border2:rgba(255,255,255,.15);
+
+    --shadow:0 25px 80px rgba(0,0,0,.35);
+
+    --radius:22px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:90px;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(20,121,255,.07),transparent 28%),
+        radial-gradient(circle at 90% 40%,rgba(39,174,96,.05),transparent 25%),
+        var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+body.menu-open{
+    overflow:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+img{
+    max-width:100%;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:-2;
+}
+
+.orb{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.18;
+    animation:floatOrb 12s ease-in-out infinite alternate;
+}
+
+.orb.one{
+    width:420px;
+    height:420px;
+    background:var(--blue);
+    top:5%;
+    left:-180px;
+}
+
+.orb.two{
+    width:360px;
+    height:360px;
+    background:var(--green);
+    right:-170px;
+    top:35%;
+    animation-delay:2s;
+}
+
+.orb.three{
+    width:300px;
+    height:300px;
+    background:#6b4cff;
+    left:35%;
+    bottom:-150px;
+    animation-delay:4s;
+}
+
+@keyframes floatOrb{
+    from{transform:translate3d(0,0,0)}
+    to{transform:translate3d(35px,-25px,0)}
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    transition:.3s ease;
+}
+
+header.scrolled{
+    background:rgba(3,8,17,.88);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
+}
+
+.header{
+    height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:1.5rem;
+    font-weight:700;
+    letter-spacing:-.5px;
+}
+
+.logo span{
+    color:var(--green2);
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+nav a{
+    color:var(--muted);
+    font-size:.86rem;
+    font-weight:500;
+    transition:.25s;
+}
+
+nav a:hover,
+nav a.active{
+    color:var(--white);
+}
+
+.menu{
+    display:none;
+    width:42px;
+    height:42px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:rgba(255,255,255,.04);
+    color:white;
+    font-size:1.35rem;
+}
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+section{
+    position:relative;
+}
+
+.section{
+    padding:105px 0;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:var(--green2);
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:16px;
+}
+
+.eyebrow::before{
+    content:"";
+    width:22px;
+    height:1px;
+    background:var(--green2);
+}
+
+.heading{
+    max-width:780px;
+    margin-bottom:48px;
+}
+
+.heading h2{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(2.1rem,4vw,3.4rem);
+    line-height:1.08;
+    letter-spacing:-1.8px;
+    margin-bottom:16px;
+}
+
+.heading p{
+    color:var(--muted);
+    max-width:720px;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,var(--blue2),var(--green2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:7px 11px;
+    border-radius:50px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.035);
+    color:var(--muted2);
+    font-size:.72rem;
+    font-weight:700;
+}
+
+.badge.live{
+    color:var(--green2);
+    border-color:rgba(82,217,138,.2);
+    background:rgba(39,174,96,.07);
+}
+
+.badge.future{
+    color:var(--blue3);
+    border-color:rgba(85,167,255,.2);
+    background:rgba(20,121,255,.07);
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:32px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    min-height:48px;
+    padding:0 20px;
+    border-radius:11px;
+    border:1px solid transparent;
+    font-size:.9rem;
+    font-weight:700;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn.primary{
+    background:var(--blue);
+    box-shadow:0 12px 35px rgba(20,121,255,.22);
+}
+
+.btn.primary:hover{
+    background:#2b89ff;
+}
+
+.btn.secondary{
+    border-color:var(--border2);
+    background:rgba(255,255,255,.035);
+}
+
+.btn.secondary:hover{
+    background:rgba(255,255,255,.07);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:150px 0 90px;
+    background:
+        radial-gradient(circle at 75% 25%,rgba(20,121,255,.16),transparent 30%),
+        radial-gradient(circle at 30% 80%,rgba(39,174,96,.07),transparent 25%);
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero h1{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(3.2rem,6vw,6rem);
+    line-height:.98;
+    letter-spacing:-4px;
+    max-width:900px;
+}
+
+.hero h1 span{
+    display:block;
+    background:linear-gradient(90deg,var(--blue2),var(--green2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-description{
+    max-width:760px;
+    color:var(--muted2);
+    font-size:1.08rem;
+    margin-top:26px;
+}
+
+.hero-note{
+    margin-top:24px;
+    color:var(--muted);
+    font-size:.86rem;
+}
+
+.hero-note strong{
+    color:var(--green2);
+}
+
+/* =========================================================
+   HERO DISCOVERY CARD
+========================================================= */
+
+.discovery-card{
+    position:relative;
+    padding:25px;
+    border:1px solid var(--border2);
+    border-radius:28px;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025)),
+        var(--soft);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+.discovery-card::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    background:var(--blue);
+    opacity:.12;
+    filter:blur(60px);
+    right:-80px;
+    top:-70px;
+}
+
+.mock-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.mock-brand{
+    font-family:"Space Grotesk";
+    font-weight:700;
+}
+
+.mock-location{
+    color:var(--green2);
+    font-size:.75rem;
+}
+
+.search-box{
+    display:flex;
+    gap:8px;
+    padding:7px;
+    border:1px solid var(--border2);
+    border-radius:13px;
+    background:rgba(0,0,0,.2);
+}
+
+.search-box input{
+    width:100%;
+    min-width:0;
+    border:0;
+    outline:0;
+    background:transparent;
+    color:white;
+    padding:8px 10px;
+}
+
+.search-box button{
+    border:0;
+    background:var(--blue);
+    color:white;
+    border-radius:9px;
+    padding:0 15px;
+    font-weight:700;
+}
+
+.mock-result{
+    margin-top:15px;
+    padding:17px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:rgba(255,255,255,.025);
+}
+
+.result-top{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.result-name{
+    font-family:"Space Grotesk";
+    font-weight:700;
+}
+
+.distance{
+    color:var(--green2);
+    font-size:.75rem;
+    white-space:nowrap;
+}
+
+.result-meta{
+    color:var(--muted);
+    font-size:.78rem;
+    margin-top:3px;
+}
+
+.result-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:13px;
+    font-size:.75rem;
+}
+
+.result-price{
+    color:var(--blue3);
+    font-weight:700;
+}
+
+.map-link{
+    color:var(--green2);
+    font-weight:700;
+}
+
+/* =========================================================
+   INTRO / FOUR PILLARS
+========================================================= */
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.intro-card{
+    padding:34px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:var(--soft);
+}
+
+.intro-card h3{
+    font-family:"Space Grotesk";
+    font-size:1.45rem;
+    margin-bottom:10px;
+}
+
+.intro-card p{
+    color:var(--muted);
+}
+
+.pillar-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin-top:22px;
+}
+
+.pillar{
+    padding:22px;
+    border:1px solid var(--border);
+    border-radius:17px;
+    background:rgba(255,255,255,.025);
+    transition:.3s;
+}
+
+.pillar:hover{
+    transform:translateY(-5px);
+    border-color:rgba(85,167,255,.3);
+}
+
+.pillar-icon{
+    font-size:1.5rem;
+    margin-bottom:12px;
+}
+
+.pillar h4{
+    font-family:"Space Grotesk";
+    margin-bottom:5px;
+}
+
+.pillar p{
+    color:var(--muted);
+    font-size:.8rem;
+}
+
+/* =========================================================
+   PROBLEM
+========================================================= */
+
+.problem-layout{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:25px;
+}
+
+.problem-intro{
+    padding:35px;
+    border-radius:var(--radius);
+    border:1px solid var(--border);
+    background:linear-gradient(145deg,rgba(20,121,255,.08),rgba(255,255,255,.02));
+}
+
+.problem-intro h3{
+    font-family:"Space Grotesk";
+    font-size:1.8rem;
+    margin-bottom:12px;
+}
+
+.problem-intro p{
+    color:var(--muted);
+}
+
+.product-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:24px;
+}
+
+.product-chip{
+    padding:8px 12px;
+    border-radius:50px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.035);
+    color:var(--muted2);
+    font-size:.78rem;
+}
+
+.problem-boxes{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.problem-box{
+    padding:28px;
+    border:1px solid var(--border);
+    border-radius:19px;
+    background:var(--soft);
+}
+
+.problem-box .mini-icon{
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    border-radius:12px;
+    background:rgba(20,121,255,.1);
+    margin-bottom:16px;
+}
+
+.problem-box h3{
+    font-family:"Space Grotesk";
+    margin-bottom:8px;
+}
+
+.problem-box p{
+    color:var(--muted);
+    font-size:.88rem;
+}
+
+/* =========================================================
+   INTERACTIVE SIDES
+========================================================= */
+
+.switcher{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:35px;
+}
+
+.switch-btn{
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.03);
+    color:var(--muted);
+    padding:11px 20px;
+    border-radius:50px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.switch-btn.active{
+    background:var(--blue);
+    border-color:var(--blue);
+    color:white;
+}
+
+.side-panel{
+    display:none;
+}
+
+.side-panel.active{
+    display:block;
+    animation:panelIn .4s ease;
+}
+
+@keyframes panelIn{
+    from{opacity:0;transform:translateY(12px)}
+    to{opacity:1;transform:none}
+}
+
+.side-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.side-card{
+    padding:30px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:var(--soft);
+}
+
+.side-number{
+    color:var(--green2);
+    font-weight:800;
+    font-size:.75rem;
+}
+
+.side-card h3{
+    font-family:"Space Grotesk";
+    margin:10px 0;
+}
+
+.side-card p{
+    color:var(--muted);
+    font-size:.88rem;
+}
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.flow{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.flow-item{
+    position:relative;
+    padding:28px;
+    min-height:190px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:var(--soft);
+    transition:.3s;
+}
+
+.flow-item:hover{
+    transform:translateY(-5px);
+    border-color:rgba(85,167,255,.3);
+}
+
+.flow-number{
+    color:var(--green2);
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.flow-item h3{
+    font-family:"Space Grotesk";
+    margin:12px 0 8px;
+}
+
+.flow-item p{
+    color:var(--muted);
+    font-size:.86rem;
+}
+
+/* =========================================================
+   LOCATION SEARCH
+========================================================= */
+
+.location-demo{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:25px;
+    align-items:stretch;
+}
+
+.location-info{
+    padding:34px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:var(--soft);
+}
+
+.location-info h3{
+    font-family:"Space Grotesk";
+    font-size:1.6rem;
+    margin-bottom:10px;
+}
+
+.location-info p{
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+.radius-controls{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:25px;
+}
+
+.radius-btn{
+    padding:8px 13px;
+    border-radius:50px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.035);
+    color:var(--muted);
+    font-size:.76rem;
+    font-weight:700;
+}
+
+.radius-btn.active{
+    background:rgba(20,121,255,.13);
+    border-color:rgba(85,167,255,.4);
+    color:var(--blue3);
+}
+
+.radius-status{
+    margin-top:22px;
+    padding:16px;
+    border-radius:13px;
+    background:rgba(39,174,96,.06);
+    border:1px solid rgba(39,174,96,.18);
+    color:var(--muted2);
+    font-size:.84rem;
+}
+
+.radius-status strong{
+    color:var(--green2);
+}
+
+.map-demo{
+    min-height:430px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px),
+        #06101c;
+    background-size:45px 45px;
+}
+
+.map-grid-glow{
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at center,rgba(20,121,255,.13),transparent 45%);
+}
+
+.user-point{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:18px;
+    height:18px;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    background:var(--blue2);
+    box-shadow:0 0 0 8px rgba(85,167,255,.12),0 0 35px rgba(85,167,255,.5);
+    z-index:4;
+}
+
+.user-point::after{
+    content:"YOU";
+    position:absolute;
+    left:50%;
+    top:28px;
+    transform:translateX(-50%);
+    font-size:.6rem;
+    font-weight:800;
+    color:var(--blue3);
+}
+
+.radius-circle{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:260px;
+    height:260px;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    border:1px solid rgba(85,167,255,.25);
+    background:rgba(20,121,255,.04);
+    transition:.5s ease;
+}
+
+.shop-pin{
+    position:absolute;
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    background:var(--green2);
+    box-shadow:0 0 18px rgba(82,217,138,.4);
+    z-index:3;
+}
+
+.shop-a{left:38%;top:39%}
+.shop-b{left:62%;top:34%}
+.shop-c{left:30%;top:67%}
+.shop-d{left:72%;top:69%}
+.shop-e{left:83%;top:25%}
+
+.shop-label{
+    position:absolute;
+    padding:5px 8px;
+    border-radius:7px;
+    background:rgba(3,8,17,.88);
+    border:1px solid var(--border);
+    font-size:.62rem;
+    color:var(--muted2);
+    white-space:nowrap;
+    transform:translate(12px,-8px);
+}
+
+.map-caption{
+    position:absolute;
+    left:18px;
+    bottom:18px;
+    padding:12px 14px;
+    border-radius:11px;
+    background:rgba(3,8,17,.82);
+    backdrop-filter:blur(10px);
+    border:1px solid var(--border);
+    color:var(--muted);
+    font-size:.72rem;
+}
+
+/* =========================================================
+   PRODUCT DETAILS
+========================================================= */
+
+.product-demo{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.product-card{
+    padding:30px;
+    border:1px solid var(--border);
+    border-radius:22px;
+    background:var(--soft);
+}
+
+.product-visual{
+    height:190px;
+    border-radius:17px;
+    background:
+        radial-gradient(circle at 50% 40%,rgba(85,167,255,.18),transparent 35%),
+        linear-gradient(145deg,#09192d,#050b14);
+    display:grid;
+    place-items:center;
+    margin-bottom:22px;
+    border:1px solid var(--border);
+}
+
+.product-symbol{
+    width:100px;
+    height:100px;
+    display:grid;
+    place-items:center;
+    border-radius:25px;
+    background:rgba(255,255,255,.05);
+    border:1px solid var(--border2);
+    font-size:3rem;
+}
+
+.product-card h3{
+    font-family:"Space Grotesk";
+    font-size:1.4rem;
+    margin-bottom:5px;
+}
+
+.product-category{
+    color:var(--muted);
+    font-size:.78rem;
+}
+
+.product-details{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+    margin-top:20px;
+}
+
+.detail{
+    padding:11px;
+    border-radius:10px;
+    background:rgba(255,255,255,.035);
+}
+
+.detail span{
+    display:block;
+    color:var(--muted);
+    font-size:.65rem;
+}
+
+.detail strong{
+    font-size:.78rem;
+}
+
+/* =========================================================
+   SHOP OWNER BENEFITS
+========================================================= */
+
+.owner-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:17px;
+}
+
+.owner-card{
+    padding:30px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:var(--soft);
+}
+
+.owner-card h3{
+    font-family:"Space Grotesk";
+    font-size:1.3rem;
+    margin:12px 0 8px;
+}
+
+.owner-card p{
+    color:var(--muted);
+    font-size:.87rem;
+}
+
+.owner-icon{
+    width:44px;
+    height:44px;
+    display:grid;
+    place-items:center;
+    border-radius:12px;
+    background:rgba(39,174,96,.08);
+    border:1px solid rgba(39,174,96,.15);
+}
+
+/* =========================================================
+   VERIFICATION
+========================================================= */
+
+.verification{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:25px;
+}
+
+.verification-copy{
+    padding:35px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:var(--soft);
+}
+
+.verification-copy h3{
+    font-family:"Space Grotesk";
+    font-size:1.7rem;
+    margin-bottom:10px;
+}
+
+.verification-copy p{
+    color:var(--muted);
+}
+
+.status-flow{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.status{
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:rgba(255,255,255,.025);
+}
+
+.status strong{
+    display:block;
+    font-family:"Space Grotesk";
+    margin-bottom:4px;
+}
+
+.status span{
+    color:var(--muted);
+    font-size:.75rem;
+}
+
+/* =========================================================
+   CURRENT VS FUTURE
+========================================================= */
+
+.scope-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.scope-card{
+    padding:32px;
+    border-radius:var(--radius);
+    border:1px solid var(--border);
+    background:var(--soft);
+}
+
+.scope-card.current{
+    border-color:rgba(39,174,96,.2);
+}
+
+.scope-card.future-scope{
+    border-color:rgba(85,167,255,.2);
+}
+
+.scope-card h3{
+    font-family:"Space Grotesk";
+    font-size:1.5rem;
+    margin-bottom:15px;
+}
+
+.scope-list{
+    list-style:none;
+}
+
+.scope-list li{
+    position:relative;
+    padding:9px 0 9px 23px;
+    border-bottom:1px solid rgba(255,255,255,.045);
+    color:var(--muted);
+    font-size:.86rem;
+}
+
+.scope-list li:last-child{
+    border-bottom:0;
+}
+
+.scope-list li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:17px;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--green2);
+}
+
+.future-scope .scope-list li::before{
+    background:var(--blue2);
+}
+
+/* =========================================================
+   ARCHITECTURE
+========================================================= */
+
+.architecture{
+    padding:38px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:
+        radial-gradient(circle at center,rgba(20,121,255,.08),transparent 45%),
+        var(--soft);
+}
+
+.architecture-flow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.arch-node{
+    padding:15px 18px;
+    border-radius:12px;
+    border:1px solid var(--border2);
+    background:rgba(255,255,255,.04);
+    text-align:center;
+    font-family:"Space Grotesk";
+    font-size:.82rem;
+}
+
+.arch-node.highlight{
+    border-color:rgba(85,167,255,.35);
+    background:rgba(20,121,255,.08);
+}
+
+.arch-arrow{
+    color:var(--green2);
+    font-weight:900;
+}
+
+.architecture-note{
+    max-width:800px;
+    margin:25px auto 0;
+    text-align:center;
+    color:var(--muted);
+    font-size:.82rem;
+}
+
+/* =========================================================
+   AI
+========================================================= */
+
+.ai-box{
+    padding:40px;
+    border:1px solid rgba(85,167,255,.2);
+    border-radius:var(--radius);
+    background:
+        radial-gradient(circle at 90% 10%,rgba(20,121,255,.12),transparent 35%),
+        var(--soft);
+}
+
+.ai-example{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    gap:18px;
+    margin-top:28px;
+}
+
+.ai-step{
+    padding:22px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:rgba(255,255,255,.025);
+}
+
+.ai-step small{
+    display:block;
+    color:var(--green2);
+    font-weight:800;
+    font-size:.68rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:7px;
+}
+
+.ai-step p{
+    color:var(--muted);
+    font-size:.82rem;
+}
+
+.ai-arrow{
+    color:var(--blue2);
+    font-size:1.4rem;
+}
+
+/* =========================================================
+   BUSINESS INTELLIGENCE
+========================================================= */
+
+.intelligence{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.intelligence-card{
+    padding:25px;
+    border:1px solid var(--border);
+    border-radius:17px;
+    background:var(--soft);
+}
+
+.intelligence-card span{
+    font-size:1.3rem;
+}
+
+.intelligence-card h3{
+    font-family:"Space Grotesk";
+    margin:10px 0 5px;
+}
+
+.intelligence-card p{
+    color:var(--muted);
+    font-size:.78rem;
+}
+
+/* =========================================================
+   PROBLEM / SOLUTION TABLE
+========================================================= */
+
+.table-wrap{
+    overflow-x:auto;
+    border:1px solid var(--border);
+    border-radius:20px;
+}
+
+.solution-table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:720px;
+}
+
+.solution-table th,
+.solution-table td{
+    padding:17px 19px;
+    text-align:left;
+    border-bottom:1px solid var(--border);
+}
+
+.solution-table th{
+    background:rgba(255,255,255,.045);
+    font-family:"Space Grotesk";
+    font-size:.8rem;
+}
+
+.solution-table td{
+    color:var(--muted);
+    font-size:.82rem;
+}
+
+.solution-table td:last-child{
+    color:var(--green2);
+}
+
+.solution-table tr:last-child td{
+    border-bottom:0;
+}
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.security-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.security-card{
+    padding:30px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:var(--soft);
+}
+
+.security-card h3{
+    font-family:"Space Grotesk";
+    margin-bottom:15px;
+}
+
+.security-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+}
+
+.security-list span{
+    padding:9px 11px;
+    border-radius:9px;
+    background:rgba(255,255,255,.03);
+    color:var(--muted);
+    font-size:.74rem;
+}
+/* =========================================================
+   IFOUND DOWNLOAD NOW BUTTON
+========================================================= */
+
+.download-button-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px 0;
+}
+
+/* Main button */
+
+.ifound-download-btn{
+    position:relative;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+
+    min-width:300px;
+    height:76px;
+
+    padding:0 32px;
+
+    color:#ffffff;
+    background:
+        linear-gradient(
+            180deg,
+            #238cff 0%,
+            #1479ff 45%,
+            #075dc9 100%
+        );
+
+    border:3px solid #0755b5;
+    border-radius:14px;
+
+    font-family:"Space Grotesk", sans-serif;
+    font-size:1.35rem;
+    font-weight:800;
+    letter-spacing:.8px;
+
+    text-decoration:none;
+
+    box-shadow:
+        0 5px 0 #03428e,
+        0 10px 20px rgba(0,0,0,.30),
+        0 0 18px rgba(20,121,255,.45),
+        inset 0 2px 2px rgba(255,255,255,.45),
+        inset 0 -5px 10px rgba(0,50,130,.20);
+
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        background .2s ease;
+
+    overflow:hidden;
+
+    cursor:pointer;
+}
+
+/* Bright reflection across the button */
+
+.ifound-download-btn::before{
+    content:"";
+
+    position:absolute;
+    top:3px;
+    left:8%;
+    right:8%;
+
+    height:35%;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.35),
+            rgba(255,255,255,0)
+        );
+
+    pointer-events:none;
+}
+
+/* Animated light */
+
+.ifound-download-btn::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:45%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    transform:skewX(-20deg);
+
+    animation:downloadShine 3.5s infinite;
+
+    pointer-events:none;
+}
+
+/* Download icon */
+
+.download-icon{
+    position:relative;
+    z-index:2;
+
+    width:43px;
+    height:43px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:9px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        inset 0 2px 4px rgba(255,255,255,.20),
+        0 3px 8px rgba(0,0,0,.18);
+}
+
+/* SVG icon */
+
+.download-icon svg{
+    width:28px;
+    height:28px;
+
+    fill:none;
+    stroke:#ffffff;
+    stroke-width:2.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+/* Text */
+
+.download-text{
+    position:relative;
+    z-index:2;
+
+    text-shadow:
+        0 2px 3px rgba(0,0,0,.30);
+}
+
+/* Hover */
+
+.ifound-download-btn:hover{
+    transform:translateY(-3px);
+
+    background:
+        linear-gradient(
+            180deg,
+            #39a0ff 0%,
+            #1479ff 45%,
+            #0866dc 100%
+        );
+
+    box-shadow:
+        0 7px 0 #03428e,
+        0 15px 30px rgba(0,0,0,.35),
+        0 0 30px rgba(20,121,255,.65),
+        inset 0 2px 3px rgba(255,255,255,.50);
+}
+
+/* ACTIVE / PRESSED STATE */
+
+.ifound-download-btn:active{
+    transform:translateY(4px);
+
+    box-shadow:
+        0 1px 0 #03428e,
+        0 4px 10px rgba(0,0,0,.25),
+        0 0 15px rgba(20,121,255,.40),
+        inset 0 3px 8px rgba(0,0,0,.25);
+
+    background:
+        linear-gradient(
+            180deg,
+            #075dc9,
+            #1479ff
+        );
+}
+
+/* Keyboard accessibility */
+
+.ifound-download-btn:focus-visible{
+    outline:3px solid rgba(82,217,138,.8);
+    outline-offset:5px;
+}
+
+/* Shining animation */
+
+@keyframes downloadShine{
+
+    0%{
+        left:-100%;
+    }
+
+    45%,
+    100%{
+        left:130%;
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .ifound-download-btn{
+        width:100%;
+        min-width:0;
+        height:70px;
+
+        padding:0 20px;
+
+        font-size:1.05rem;
+        gap:13px;
+
+        border-radius:13px;
+    }
+
+    .download-icon{
+        width:40px;
+        height:40px;
+    }
+
+    .download-icon svg{
+        width:25px;
+        height:25px;
+    }
+
+}
+
+/* =========================================================
+   MONETIZATION
+========================================================= */
+
+.monetization{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+}
+
+.money-card{
+    padding:23px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:var(--soft);
+}
+
+.money-card h3{
+    font-family:"Space Grotesk";
+    font-size:1rem;
+    margin:10px 0 5px;
+}
+
+.money-card p{
+    color:var(--muted);
+    font-size:.73rem;
+}
+
+/* =========================================================
+   ROADMAP
+========================================================= */
+
+.roadmap{
+    position:relative;
+    max-width:900px;
+    margin:auto;
+}
+
+.roadmap::before{
+    content:"";
+    position:absolute;
+    left:19px;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:var(--border2);
+}
+
+.road-item{
+    position:relative;
+    padding-left:65px;
+    margin-bottom:28px;
+}
+
+.road-dot{
+    position:absolute;
+    left:10px;
+    top:5px;
+    width:19px;
+    height:19px;
+    border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--blue2);
+    box-shadow:0 0 0 5px rgba(20,121,255,.06);
+}
+
+.road-item:first-child .road-dot{
+    border-color:var(--green2);
+}
+
+.road-card{
+    padding:25px;
+    border:1px solid var(--border);
+    border-radius:17px;
+    background:var(--soft);
+}
+
+.road-card h3{
+    font-family:"Space Grotesk";
+    margin-bottom:5px;
+}
+
+.road-card p{
+    color:var(--muted);
+    font-size:.84rem;
+}
+
+/* =========================================================
+   ECOSYSTEM
+========================================================= */
+
+.ecosystem{
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:25px;
+    align-items:center;
+}
+
+.ecosystem-center{
+    padding:40px;
+    border:1px solid rgba(85,167,255,.25);
+    border-radius:50%;
+    width:260px;
+    height:260px;
+    margin:auto;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    background:radial-gradient(circle,rgba(20,121,255,.15),rgba(255,255,255,.02));
+}
+
+.ecosystem-center h3{
+    font-family:"Space Grotesk";
+    font-size:1.6rem;
+}
+
+.ecosystem-items{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.ecosystem-item{
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:var(--soft);
+}
+
+.ecosystem-item h3{
+    font-family:"Space Grotesk";
+    margin-bottom:4px;
+}
+
+.ecosystem-item p{
+    color:var(--muted);
+    font-size:.75rem;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    border:1px solid var(--border);
+    border-radius:15px;
+    margin-bottom:10px;
+    overflow:hidden;
+    background:var(--soft);
+}
+
+.faq-question{
+    width:100%;
+    border:0;
+    background:none;
+    color:white;
+    padding:20px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    text-align:left;
+    font-weight:700;
+}
+
+.faq-icon{
+    width:28px;
+    height:28px;
+    flex-shrink:0;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
+    color:var(--green2);
+    transition:.3s;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+}
+
+.faq-answer p{
+    padding:0 22px 20px;
+    color:var(--muted);
+    font-size:.86rem;
+}
+
+.faq-item.open .faq-icon{
+    transform:rotate(45deg);
+    background:rgba(39,174,96,.1);
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.cta{
+    padding:100px 0 115px;
+}
+
+.cta-box{
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    padding:70px 30px;
+    border:1px solid rgba(85,167,255,.2);
+    border-radius:30px;
+    background:
+        radial-gradient(circle at 50% 0%,rgba(20,121,255,.18),transparent 45%),
+        linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+}
+
+.cta-box h2{
+    font-family:"Space Grotesk";
+    font-size:clamp(2.3rem,5vw,4rem);
+    line-height:1;
+    letter-spacing:-2px;
+    max-width:800px;
+    margin:auto;
+}
+
+.cta-box p{
+    max-width:700px;
+    margin:18px auto 0;
+    color:var(--muted);
+}
+
+.cta-box .buttons{
+    justify-content:center;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:35px 0;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    color:var(--muted);
+    font-size:.78rem;
+}
+
+.footer strong{
+    color:white;
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:opacity .7s ease,transform .7s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+    nav{
+        gap:15px;
+    }
+
+    nav a{
+        font-size:.78rem;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:135px;
+    }
+
+    .discovery-card{
+        max-width:650px;
+    }
+
+    .pillar-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .flow{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .intelligence{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .monetization{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:900px){
+
+    nav{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:4%;
+        right:4%;
+        padding:22px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        background:rgba(7,17,31,.98);
+        border:1px solid var(--border);
+        border-radius:17px;
+        box-shadow:var(--shadow);
+    }
+
+    nav.open{
+        display:flex;
+    }
+
+    nav a{
+        padding:12px;
+        font-size:.9rem;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .problem-layout,
+    .location-demo,
+    .verification,
+    .security-grid,
+    .ecosystem{
+        grid-template-columns:1fr;
+    }
+
+    .side-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .product-demo{
+        grid-template-columns:1fr;
+    }
+
+    .owner-grid,
+    .scope-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ai-example{
+        grid-template-columns:1fr;
+    }
+
+    .ai-arrow{
+        transform:rotate(90deg);
+        text-align:center;
+    }
+
+    .ecosystem-center{
+        width:220px;
+        height:220px;
+    }
+}
+
+@media(max-width:650px){
+
+    .section{
+        padding:75px 0;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:125px 0 70px;
+    }
+
+    .hero h1{
+        letter-spacing:-2.5px;
+    }
+
+    .hero-description{
+        font-size:.96rem;
+    }
+    /* =========================================================
+   IFOUND APP DOWNLOAD SECTION
+========================================================= */
+
+.download-section{
+    padding:110px 0;
+    position:relative;
+    overflow:hidden;
+}
+
+.download-card{
+    position:relative;
+    min-height:520px;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:50px;
+    padding:65px;
+    border:1px solid rgba(85,167,255,.18);
+    border-radius:30px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20,121,255,.10),
+            rgba(39,174,96,.05)
+        ),
+        var(--soft);
+    overflow:hidden;
+}
+
+.download-glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    right:-180px;
+    top:-180px;
+    background:radial-gradient(
+        circle,
+        rgba(20,121,255,.20),
+        transparent 70%
+    );
+    pointer-events:none;
+}
+
+.download-content{
+    position:relative;
+    z-index:2;
+}
+
+.download-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:8px 13px;
+    border:1px solid rgba(82,217,138,.25);
+    border-radius:50px;
+    background:rgba(39,174,96,.07);
+    color:var(--green2);
+    font-size:.75rem;
+    font-weight:800;
+    letter-spacing:.7px;
+    margin-bottom:20px;
+}
+
+.pulse-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--green2);
+    box-shadow:0 0 0 5px rgba(82,217,138,.10);
+    animation:pulseDot 2s infinite;
+}
+
+.download-content h2{
+    font-family:"Space Grotesk";
+    font-size:clamp(2.3rem,4vw,4rem);
+    line-height:1.05;
+    letter-spacing:-2px;
+    max-width:620px;
+}
+
+.download-content h2 span{
+    color:var(--blue2);
+}
+
+.download-content p{
+    max-width:650px;
+    margin-top:20px;
+    color:var(--muted);
+    font-size:1rem;
+}
+
+.download-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
+}
+
+.download-btn{
+    min-width:205px;
+    min-height:62px;
+    padding:10px 17px;
+    border-radius:13px;
+    display:flex;
+    align-items:center;
+    gap:13px;
+    font-weight:800;
+    transition:.3s ease;
+}
+
+.download-btn:hover{
+    transform:translateY(-4px);
+}
+
+.download-btn small{
+    display:block;
+    font-size:.67rem;
+    font-weight:500;
+    opacity:.75;
+    margin-bottom:2px;
+}
+
+.primary-download{
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        #0d5ed1
+    );
+    box-shadow:0 12px 30px rgba(20,121,255,.20);
+}
+
+.secondary-download{
+    border:1px solid var(--border-light);
+    background:rgba(255,255,255,.025);
+}
+
+.download-icon{
+    width:38px;
+    height:38px;
+    display:grid;
+    place-items:center;
+    border-radius:10px;
+    background:rgba(255,255,255,.12);
+    font-size:1.2rem;
+}
+
+.download-note{
+    margin-top:22px;
+    color:var(--muted);
+    font-size:.76rem;
+}
+
+.download-note span{
+    color:var(--green2);
+    margin-right:5px;
+}
+
+/* Phone visual */
+
+.download-visual{
+    min-height:420px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.phone-glow{
+    position:absolute;
+    width:330px;
+    height:330px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle,
+        rgba(20,121,255,.22),
+        transparent 70%
+    );
+    filter:blur(5px);
+}
+
+.phone{
+    position:relative;
+    width:225px;
+    height:430px;
+    padding:8px;
+    border-radius:34px;
+    background:
+        linear-gradient(
+            145deg,
+            #1b2638,
+            #07101d
+        );
+    border:2px solid rgba(255,255,255,.16);
+    box-shadow:
+        0 35px 80px rgba(0,0,0,.55),
+        0 0 45px rgba(20,121,255,.15);
+    transform:rotate(4deg);
+    z-index:2;
+    animation:phoneFloat 5s ease-in-out infinite;
+}
+
+.phone-camera{
+    position:absolute;
+    width:70px;
+    height:18px;
+    border-radius:20px;
+    background:#02050a;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:4;
+}
+
+.phone-screen{
+    height:100%;
+    border-radius:27px;
+    padding:45px 17px 20px;
+    background:
+        radial-gradient(
+            circle at 70% 10%,
+            rgba(20,121,255,.20),
+            transparent 35%
+        ),
+        #06101c;
+    overflow:hidden;
+}
+
+.app-mini-logo{
+    font-family:"Space Grotesk";
+    font-weight:800;
+    font-size:1.4rem;
+    margin-bottom:22px;
+}
+
+.app-mini-logo span{
+    color:var(--green2);
+}
+
+.search-mini{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:12px;
+    border-radius:10px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    color:var(--muted);
+    font-size:.64rem;
+}
+
+.search-mini span:first-child{
+    color:var(--blue2);
+    font-size:1rem;
+}
+
+.mini-location{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    margin:15px 0;
+    color:var(--green2);
+    font-size:.62rem;
+}
+
+.mini-card{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    padding:11px;
+    margin-top:9px;
+    border-radius:11px;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.mini-icon{
+    width:30px;
+    height:30px;
+    display:grid;
+    place-items:center;
+    border-radius:8px;
+    background:rgba(20,121,255,.12);
+    font-size:.9rem;
+}
+
+.mini-card div:nth-child(2){
+    flex:1;
+}
+
+.mini-card strong{
+    display:block;
+    font-size:.63rem;
+}
+
+.mini-card small{
+    display:block;
+    color:var(--muted);
+    font-size:.52rem;
+    margin-top:2px;
+}
+
+.mini-card b{
+    color:var(--blue2);
+}
+
+/* Floating information tags */
+
+.floating-tag{
+    position:absolute;
+    z-index:5;
+    padding:10px 13px;
+    border:1px solid var(--border-light);
+    border-radius:12px;
+    background:rgba(3,8,17,.78);
+    backdrop-filter:blur(12px);
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+    font-size:.67rem;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    white-space:nowrap;
+}
+
+.floating-tag span{
+    color:var(--green2);
+}
+
+.tag-one{
+    top:55px;
+    left:5px;
+    animation:tagFloat 4s ease-in-out infinite;
+}
+
+.tag-two{
+    right:0;
+    top:145px;
+    animation:tagFloat 4s ease-in-out infinite 1s;
+}
+
+.tag-three{
+    left:20px;
+    bottom:55px;
+    animation:tagFloat 4s ease-in-out infinite 2s;
+}
+
+/* Animations */
+
+@keyframes phoneFloat{
+    0%,100%{
+        transform:translateY(0) rotate(4deg);
+    }
+    50%{
+        transform:translateY(-12px) rotate(2deg);
+    }
+}
+
+@keyframes tagFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+@keyframes pulseDot{
+    0%,100%{
+        box-shadow:0 0 0 4px rgba(82,217,138,.08);
+    }
+    50%{
+        box-shadow:0 0 0 8px rgba(82,217,138,.02);
+    }
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .download-card{
+        grid-template-columns:1fr;
+        padding:45px 30px;
+    }
+
+    .download-visual{
+        min-height:450px;
+        margin-top:10px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .download-section{
+        padding:75px 0;
+    }
+
+    .download-card{
+        padding:35px 20px;
+        border-radius:22px;
+    }
+
+    .download-content h2{
+        letter-spacing:-1.5px;
+    }
+
+    .download-actions{
+        flex-direction:column;
+    }
+
+    .download-btn{
+        width:100%;
+    }
+
+    .download-visual{
+        min-height:420px;
+        transform:scale(.88);
+        margin-left:-5%;
+        margin-right:-5%;
+    }
+
+    .floating-tag{
+        font-size:.58rem;
+    }
+
+    .tag-one{
+        left:-5px;
+    }
+
+    .tag-two{
+        right:-5px;
+    }
+
+    .tag-three{
+        left:0;
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    .phone,
+    .floating-tag,
+    .pulse-dot{
+        animation:none;
+    }
+}
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .intro-grid,
+    .problem-boxes,
+    .pillar-grid,
+    .side-grid,
+    .flow,
+    .status-flow,
+    .security-list,
+    .ecosystem-items{
+        grid-template-columns:1fr;
+    }
+
+    .pillar-grid{
+        display:grid;
+    }
+
+    .discovery-card,
+    .intro-card,
+    .problem-intro,
+    .location-info,
+    .architecture,
+    .ai-box,
+    .cta-box{
+        padding:25px;
+    }
+
+    .map-demo{
+        min-height:350px;
+    }
+
+    .monetization{
+        grid-template-columns:1fr;
+    }
+
+    .footer{
+        flex-direction:column;
+    }
+
+    .switcher{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .switch-btn{
+        width:100%;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        scroll-behavior:auto!important;
+        animation:none!important;
+        transition:none!important;
+    }
+
+    .reveal{
+        opacity:1;
+        transform:none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+</div>
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
+
+<header id="header">
+
+<div class="container header">
+
+<a class="logo" href="index.html">
+    IFOUND<span>.</span>
+</a>
+
+<nav id="nav">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="products.html">Products</a>
+<a href="ifound-app.html" class="active">IFOUND App</a>
+<a href="research.html">Research</a>
+<a href="vision.html">Vision</a>
+<a href="founder.html">Founder</a>
+<a href="contact.html">Contact</a>
+
+</nav>
+
+<button class="menu" id="menu" aria-label="Open navigation">
+    ☰
+</button>
+
+</div>
+
+</header>
+
+
+<main>
+    
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div class="reveal">
+
+<div class="eyebrow">
+    IFOUND Global Network
+</div>
+
+<h1>
+    Find What You Need.
+    <span>Discover Where It Is.</span>
+</h1>
+
+<p class="hero-description">
+    IFOUND Global Network is a global product and business discovery
+    platform designed to connect people with shops and businesses that
+    provide the products they need.
+</p>
+
+<div class="buttons">
+
+<a href="#how-it-works" class="btn primary">
+    Explore How It Works →
+</a>
+
+<a href="#features" class="btn secondary">
+    Explore Features
+</a>
+<!-- IFOUND APP DOWNLOAD BUTTON -->
+<div class="download-button-wrapper">
+
+   <a href="https://ifound-568fe.web.app/downloads/IFOUND.apk"
+   class="ifound-download-btn"
+   download>"
+       class="ifound-download-btn"
+       download>
+
+        <span class="download-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v11"></path>
+                <path d="M7 10l5 5 5-5"></path>
+                <path d="M4 20h16"></path>
+            </svg>
+        </span>
+
+        <span class="download-text">DOWNLOAD NOW</span>
+
+    </a>
+
+</div>
+
+</div>
+
+<p class="hero-note">
+    <strong>For Users:</strong> Find products and nearby businesses.
+    &nbsp; <strong>For Shop Owners:</strong> Make products discoverable.
+</p>
+
+</div>
+
+
+<div class="discovery-card reveal">
+
+<div class="mock-header">
+
+<div class="mock-brand">
+    IFOUND Global Network
+</div>
+
+<div class="mock-location">
+    ● Location aware
+</div>
+
+</div>
+
+<div class="search-box">
+
+<input
+    id="demoSearch"
+    type="text"
+    value="Black shoes"
+    aria-label="Demo product search"
+>
+
+<button id="demoSearchButton">
+    Search
+</button>
+
+</div>
+
+<div id="demoResults">
+
+<div class="mock-result">
+
+<div class="result-top">
+
+<div>
+<div class="result-name">Nearby Footwear Store</div>
+<div class="result-meta">Shoes · Black · Size 42</div>
+</div>
+
+<div class="distance">1.2 km</div>
+
+</div>
+
+<div class="result-footer">
+
+<span class="result-price">Product available</span>
+
+<span class="map-link">
+    View location →
+</span>
+
+</div>
+
+</div>
+
+
+<div class="mock-result">
+
+<div class="result-top">
+
+<div>
+<div class="result-name">City Fashion Shop</div>
+<div class="result-meta">Shoes · Multiple sizes</div>
+</div>
+
+<div class="distance">3.7 km</div>
+
+</div>
+
+<div class="result-footer">
+
+<span class="result-price">Product information</span>
+
+<span class="map-link">
+    View shop →
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     WHAT IS IFOUND
+====================================================== -->
+
+<section class="section" id="about-app">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    The Platform
+</div>
+
+<h2>
+    A digital connection between
+    <span class="gradient-text">people, products, businesses and location.</span>
+</h2>
+
+<p>
+    Instead of visiting many shops, calling different businesses, or asking
+    several people where an item is available, users can search through
+    IFOUND and discover relevant businesses based on location and available
+    information.
+</p>
+
+</div>
+
+
+<div class="intro-grid">
+
+<div class="intro-card reveal">
+
+<h3>For People</h3>
+
+<p>
+    IFOUND is designed to help people answer a simple question:
+    <strong>“Where can I find what I need?”</strong>
+    Users can search for products, discover relevant businesses,
+    examine available information and find the physical location.
+</p>
+
+</div>
+
+
+<div class="intro-card reveal">
+
+<h3>For Businesses</h3>
+
+<p>
+    IFOUND is also designed to answer:
+    <strong>“How can people who need my products discover my shop?”</strong>
+    Businesses can build a digital presence containing shop and product
+    information so potential customers can discover them.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="pillar-grid">
+
+<div class="pillar reveal">
+<div class="pillar-icon">🔎</div>
+<h4>Discovery</h4>
+<p>Search for products and businesses.</p>
+</div>
+
+<div class="pillar reveal">
+<div class="pillar-icon">📍</div>
+<h4>Location</h4>
+<p>Connect discovery with physical places.</p>
+</div>
+
+<div class="pillar reveal">
+<div class="pillar-icon">🏪</div>
+<h4>Businesses</h4>
+<p>Give physical businesses digital visibility.</p>
+</div>
+
+<div class="pillar reveal">
+<div class="pillar-icon">🌎</div>
+<h4>Global</h4>
+<p>Designed for international expansion.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     PROBLEM
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    The Problem
+</div>
+
+<h2>
+    Finding a product can sometimes be harder than buying it.
+</h2>
+
+<p>
+    People may need to visit several shops before discovering which
+    business actually has what they need. At the same time, businesses
+    may have products available while potential customers do not know
+    that those businesses exist.
+</p>
+
+</div>
+
+
+<div class="problem-layout">
+
+<div class="problem-intro reveal">
+
+<h3>
+    What are people searching for?
+</h3>
+
+<p>
+    Almost anything that can be offered by a physical business can
+    potentially become part of the discovery ecosystem.
+</p>
+
+<div class="product-list">
+
+<span class="product-chip">Shoes</span>
+<span class="product-chip">Phones</span>
+<span class="product-chip">Laptops</span>
+<span class="product-chip">Building Materials</span>
+<span class="product-chip">Medicine</span>
+<span class="product-chip">Food</span>
+<span class="product-chip">Clothing</span>
+<span class="product-chip">Spare Parts</span>
+<span class="product-chip">Furniture</span>
+<span class="product-chip">Agricultural Products</span>
+<span class="product-chip">Electronics</span>
+<span class="product-chip">Cosmetics</span>
+
+</div>
+
+</div>
+
+
+<div class="problem-boxes">
+
+<div class="problem-box reveal">
+
+<div class="mini-icon">👤</div>
+
+<h3>For Customers</h3>
+
+<p>
+    “Where can I find what I need?”
+</p>
+
+</div>
+
+
+<div class="problem-box reveal">
+
+<div class="mini-icon">🏪</div>
+
+<h3>For Businesses</h3>
+
+<p>
+    “How can people who need my products discover my shop?”
+</p>
+
+</div>
+
+
+<div class="problem-box reveal">
+
+<div class="mini-icon">🔄</div>
+
+<h3>The Connection</h3>
+
+<p>
+    IFOUND is designed to connect these two sides through product,
+    business and location discovery.
+</p>
+
+</div>
+
+
+<div class="problem-box reveal">
+
+<div class="mini-icon">💡</div>
+
+<h3>The Opportunity</h3>
+
+<p>
+    Better discovery can help customers save time while giving
+    businesses another way to become visible.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     FEATURES
+====================================================== -->
+
+<section class="section" id="features">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Core Features
+</div>
+
+<h2>
+    Built around the journey from
+    <span class="gradient-text">need to discovery.</span>
+</h2>
+
+<p>
+    The core experience connects search, product information,
+    businesses, location and physical-world discovery.
+</p>
+
+</div>
+
+
+<div class="features">
+
+<div class="feature reveal">
+<div class="icon">⌕</div>
+<h3>Product Search</h3>
+<p>
+    Search for products or categories such as shoes, phones,
+    rice, laptops or building materials.
+</p>
+</div>
+
+
+<div class="feature reveal">
+<div class="icon">📍</div>
+<h3>Location-Aware Discovery</h3>
+<p>
+    The platform is designed to use geographic information to
+    identify relevant businesses around the user.
+</p>
+</div>
+
+
+<div class="feature reveal">
+<div class="icon">▣</div>
+<h3>Product-Level Information</h3>
+<p>
+    Product information can include name, category, description,
+    price, size, colour, brand, material, condition and stock status.
+</p>
+</div>
+
+
+<div class="feature reveal">
+<div class="icon">🏪</div>
+<h3>Digital Shop Presence</h3>
+<p>
+    Shop owners can create a digital business presence containing
+    their shop and product information.
+</p>
+</div>
+
+
+<div class="feature reveal">
+<div class="icon">⌖</div>
+<h3>Maps & Directions</h3>
+<p>
+    Once a physical shop is discovered, map information can help
+    the customer locate and visit the business.
+</p>
+</div>
+
+
+<div class="feature reveal">
+<div class="icon">☎</div>
+<h3>Business Contact</h3>
+<p>
+    Where available, users can use business contact options such
+    as calls or WhatsApp.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     USER / SHOP OWNER
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Two-Sided Platform
+</div>
+
+<h2>
+    Designed for both sides of the marketplace.
+</h2>
+
+<p>
+    IFOUND connects people searching for products with shop owners and
+    businesses that want to become easier to discover.
+</p>
+
+</div>
+
+
+<div class="switcher">
+
+<button class="switch-btn active" data-side="users">
+    👤 For Users
+</button>
+
+<button class="switch-btn" data-side="owners">
+    🏪 For Shop Owners
+</button>
+
+</div>
+
+
+<div class="side-panel active" id="users">
+
+<div class="side-grid">
+
+<div class="side-card">
+<span class="side-number">01</span>
+<h3>Create an Account</h3>
+<p>
+    A user can register and sign into IFOUND to access a personalized
+    discovery experience.
+</p>
+</div>
+
+<div class="side-card">
+<span class="side-number">02</span>
+<h3>Share Location</h3>
+<p>
+    Location access can help the platform understand where the user
+    currently is when nearby discovery is needed.
+</p>
+</div>
+
+<div class="side-card">
+<span class="side-number">03</span>
+<h3>Search</h3>
+<p>
+    Enter a product or category and explore available businesses.
+</p>
+</div>
+
+<div class="side-card">
+<span class="side-number">04</span>
+<h3>Compare</h3>
+<p>
+    Review available product and shop information before deciding
+    where to go.
+</p>
+</div>
+
+<div class="side-card">
+<span class="side-number">05</span>
+<h3>Locate</h3>
+<p>
+    Use available map information to understand where the physical
+    business is located.
+</p>
+</div>
+
+<div class="side-card">
+<span class="side-number">06</span>
+<h3>Visit</h3>
+<p>
+    The ultimate discovery journey connects the user with the
+    physical business.
+</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="side-panel" id="owners">
+
+<div class="side-grid">
+
+<div class="side-card">
+<span class="side-number">01</span>
+<h3>Register a Shop</h3>
+<p>
+    Shop owners can submit information about their physical business.
+</p>
+</div>
+
+<div class="side-card">
+<span class="side-number">02</span>
+<h3>Build Digital Presence</h3>
+<p>
+    A shop profile can contain business information, location,
+    contact details and products.
+</p>
+</div>
+
+<div class="side-card">
+<span class="side-number">03</span>
+<h3>Add Products</h3>
+<p>
+    Businesses can provide product information so potential customers
+    can discover what they offer.
+</p>
+</div>
+
+<div class="side-card">
+<span class="side-number">04</span>
+<h3>Improve Visibility</h3>
+<p>
+    A nearby customer searching for a relevant product can potentially
+    discover the business.
+</p>
+</div>
+
+<div class="side-card">
+<span class="side-number">05</span>
+<h3>Manage Information</h3>
+<p>
+    Future shop management tools can allow businesses to update
+    products, shop information and settings.
+</p>
+</div>
+
+<div class="side-card">
+<span class="side-number">06</span>
+<h3>Understand Demand</h3>
+<p>
+    Future analytics can help businesses understand searches,
+    product interest and geographic demand.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     HOW IT WORKS
+====================================================== -->
+
+<section class="section" id="how-it-works">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    How It Works
+</div>
+
+<h2>
+    From a simple search to a real-world visit.
+</h2>
+
+<p>
+    The fundamental IFOUND journey is designed to remain simple:
+    search, discover, understand, locate and visit.
+</p>
+
+</div>
+
+
+<div class="flow">
+
+<div class="flow-item reveal">
+<span class="flow-number">STEP 01</span>
+<h3>Create an Account</h3>
+<p>
+    Register and sign into IFOUND to begin using the platform.
+</p>
+</div>
+
+<div class="flow-item reveal">
+<span class="flow-number">STEP 02</span>
+<h3>Allow Location</h3>
+<p>
+    When location is needed, the platform can use the user's current
+    device location.
+</p>
+</div>
+
+<div class="flow-item reveal">
+<span class="flow-number">STEP 03</span>
+<h3>Search</h3>
+<p>
+    Enter something such as “Black shoes”, “iPhone”, “Rice”
+    or “Laptop”.
+</p>
+</div>
+
+<div class="flow-item reveal">
+<span class="flow-number">STEP 04</span>
+<h3>Discover</h3>
+<p>
+    Explore relevant shops and available product information.
+</p>
+</div>
+
+<div class="flow-item reveal">
+<span class="flow-number">STEP 05</span>
+<h3>Check Details</h3>
+<p>
+    Examine product, price, stock, shop and other available information.
+</p>
+</div>
+
+<div class="flow-item reveal">
+<span class="flow-number">STEP 06</span>
+<h3>Find Location</h3>
+<p>
+    View the shop location and available map information.
+</p>
+</div>
+
+<div class="flow-item reveal">
+<span class="flow-number">STEP 07</span>
+<h3>Get Directions</h3>
+<p>
+    Use Google Maps or available direction tools to reach the business.
+</p>
+</div>
+
+<div class="flow-item reveal">
+<span class="flow-number">STEP 08</span>
+<h3>Visit</h3>
+<p>
+    Complete the discovery journey by connecting with the physical shop.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     LOCATION SEARCH
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Location Intelligence
+</div>
+
+<h2>
+    Start nearby. Explore farther when necessary.
+</h2>
+
+<p>
+    IFOUND is designed around the idea that the user's current GPS
+    position should become important when answering:
+    <strong>“Where is the nearest place where I can find this?”</strong>
+</p>
+
+</div>
+
+
+<div class="location-demo">
+
+<div class="location-info reveal">
+
+<h3>
+    Nearby Search
+</h3>
+
+<p>
+    The planned nearby-search experience can prioritize qualifying
+    shops within a 10 km radius. If nothing relevant is found,
+    the user can choose to explore farther.
+</p>
+
+<div class="radius-controls">
+
+<button class="radius-btn active" data-radius="10">10 km</button>
+<button class="radius-btn" data-radius="25">25 km</button>
+<button class="radius-btn" data-radius="50">50 km</button>
+<button class="radius-btn" data-radius="100">100 km</button>
+<button class="radius-btn" data-radius="150">150 km</button>
+<button class="radius-btn" data-radius="200">200 km</button>
+
+</div>
+
+<div class="radius-status" id="radiusStatus">
+    <strong>Nearby Search:</strong>
+    prioritizing matching businesses within 10 km.
+</div>
+
+</div>
+
+
+<div class="map-demo reveal">
+
+<div class="map-grid-glow"></div>
+
+<div class="radius-circle" id="radiusCircle"></div>
+
+<div class="user-point"></div>
+
+<div class="shop-pin shop-a">
+    <span class="shop-label">Shop A · 1 km</span>
+</div>
+
+<div class="shop-pin shop-b">
+    <span class="shop-label">Shop B · 2 km</span>
+</div>
+
+<div class="shop-pin shop-c">
+    <span class="shop-label">Shop C · 5 km</span>
+</div>
+
+<div class="shop-pin shop-d">
+    <span class="shop-label">Shop D · 8 km</span>
+</div>
+
+<div class="shop-pin shop-e">
+    <span class="shop-label">Shop E · 14 km</span>
+</div>
+
+<div class="map-caption">
+    Illustrative location-search visualization — not a live map.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     NO RESULT / EXPLORE
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Explore Search
+</div>
+
+<h2>
+    No nearby result should not mean the end of the search.
+</h2>
+
+<p>
+    If there are currently no matching shops within the nearby search
+    radius, IFOUND can provide an option to search farther away.
+</p>
+
+</div>
+
+
+<div class="intro-grid">
+
+<div class="intro-card reveal">
+
+<div class="badge live">
+    📍 Nearby Search
+</div>
+
+<h3 style="margin-top:18px;">
+    “Find it close to me.”
+</h3>
+
+<p>
+    Start with the user's current location and prioritize relevant
+    businesses nearby.
+</p>
+
+</div>
+
+
+<div class="intro-card reveal">
+
+<div class="badge future">
+    🌎 Explore Search
+</div>
+
+<h3 style="margin-top:18px;">
+    “Show me other possibilities.”
+</h3>
+
+<p>
+    When nearby results are insufficient, the search can progressively
+    expand through wider distances such as 25 km, 50 km, 100 km,
+    150 km and 200 km.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     PRODUCT INFORMATION
+====================================================== -->
+
+<section class="section" id="product-information">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Product Discovery
+</div>
+
+<h2>
+    More than “this shop sells shoes.”
+</h2>
+
+<p>
+    The long-term product experience is designed to provide useful
+    product-level information so users can understand whether an item
+    actually meets their needs before travelling to a shop.
+</p>
+
+</div>
+
+
+<div class="product-demo">
+
+<div class="product-card reveal">
+
+<div class="product-visual">
+<div class="product-symbol">👟</div>
+</div>
+
+<h3>Nike Running Shoes</h3>
+
+<div class="product-category">
+    Fashion & Clothing · Shoes
+</div>
+
+<div class="product-details">
+
+<div class="detail">
+<span>Brand</span>
+<strong>Nike</strong>
+</div>
+
+<div class="detail">
+<span>Colour</span>
+<strong>Black</strong>
+</div>
+
+<div class="detail">
+<span>Size</span>
+<strong>42</strong>
+</div>
+
+<div class="detail">
+<span>Condition</span>
+<strong>New</strong>
+</div>
+
+<div class="detail">
+<span>Price</span>
+<strong>₦85,000</strong>
+</div>
+
+<div class="detail">
+<span>Stock</span>
+<strong>Available</strong>
+</div>
+
+<div class="detail">
+<span>Minimum Order</span>
+<strong>1</strong>
+</div>
+
+<div class="detail">
+<span>Category</span>
+<strong>Shoes</strong>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="intro-card reveal">
+
+<h3>
+    Why product-level information matters
+</h3>
+
+<p>
+    A customer may need more than the name of a shop. They may need
+    to know the size, colour, brand, condition, price, stock status,
+    minimum order or other product characteristics.
+</p>
+
+<br>
+
+<p>
+    Providing this information can reduce unnecessary trips and help
+    users decide which business is most relevant to them.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     SHOP INFORMATION
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Shop Profiles
+</div>
+
+<h2>
+    Discover the business behind the product.
+</h2>
+
+<p>
+    Once a relevant business is found, its digital profile can provide
+    the information a customer needs to decide whether the shop is suitable.
+</p>
+
+</div>
+
+
+<div class="owner-grid">
+
+<div class="owner-card reveal">
+<div class="owner-icon">🏪</div>
+<h3>Shop Name</h3>
+<p>Identify the physical business connected to the listing.</p>
+</div>
+
+<div class="owner-card reveal">
+<div class="owner-icon">📍</div>
+<h3>Address & Location</h3>
+<p>Understand where the business is physically located.</p>
+</div>
+
+<div class="owner-card reveal">
+<div class="owner-icon">☎</div>
+<h3>Contact</h3>
+<p>Access available phone or other business contact information.</p>
+</div>
+
+<div class="owner-card reveal">
+<div class="owner-icon">📦</div>
+<h3>Products</h3>
+<p>Explore products associated with the shop.</p>
+</div>
+
+<div class="owner-card reveal">
+<div class="owner-icon">💰</div>
+<h3>Prices</h3>
+<p>Where provided, product listings can contain pricing information.</p>
+</div>
+
+<div class="owner-card reveal">
+<div class="owner-icon">🗺️</div>
+<h3>Map Location</h3>
+<p>Use map information to help locate the physical shop.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     SHOP OWNER BENEFITS
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    For Shop Owners
+</div>
+
+<h2>
+    Turn a physical shop into a discoverable digital presence.
+</h2>
+
+<p>
+    IFOUND is not only designed for consumers. It is also intended
+    to become a digital visibility platform for local and growing businesses.
+</p>
+
+</div>
+
+
+<div class="owner-grid">
+
+<div class="owner-card reveal">
+<div class="owner-icon">🌐</div>
+<h3>Digital Shop Presence</h3>
+<p>
+    Register a physical business and provide its name, location,
+    contact information, description and product information.
+</p>
+</div>
+
+<div class="owner-card reveal">
+<div class="owner-icon">🔎</div>
+<h3>Product Visibility</h3>
+<p>
+    Products can become discoverable to people searching for relevant
+    items in the area.
+</p>
+</div>
+
+<div class="owner-card reveal">
+<div class="owner-icon">📍</div>
+<h3>Local Customer Discovery</h3>
+<p>
+    Nearby customers searching for a product can potentially discover
+    businesses they did not know existed.
+</p>
+</div>
+
+<div class="owner-card reveal">
+<div class="owner-icon">📈</div>
+<h3>Future Business Growth</h3>
+<p>
+    Future business tools can provide statistics, visibility information
+    and other insights.
+</p>
+</div>
+
+<div class="owner-card reveal">
+<div class="owner-icon">⚙️</div>
+<h3>Future Shop Management</h3>
+<p>
+    A future shop-owner workspace can centralize products, shop settings,
+    statistics, subscriptions and support.
+</p>
+</div>
+
+<div class="owner-card reveal">
+<div class="owner-icon">💡</div>
+<h3>Future Market Intelligence</h3>
+<p>
+    Future demand information can help businesses understand what
+    customers are searching for.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     VERIFICATION
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="verification">
+
+<div class="verification-copy reveal">
+
+<div class="eyebrow">
+    Trust & Verification
+</div>
+
+<h3>
+    A discoverable business should also be a trustworthy business.
+</h3>
+
+<p>
+    IFOUND can use a staged verification workflow before a shop
+    becomes publicly searchable. This is intended to reduce fake
+    businesses, incorrect information, duplicate listings and
+    inactive businesses appearing as active.
+</p>
+
+</div>
+
+
+<div class="status-flow">
+
+<div class="status reveal">
+<strong>Submitted</strong>
+<span>Shop information has been submitted.</span>
+</div>
+
+<div class="status reveal">
+<strong>Under Verification</strong>
+<span>Information is being reviewed.</span>
+</div>
+
+<div class="status reveal">
+<strong>Approved</strong>
+<span>The shop has passed the relevant review.</span>
+</div>
+
+<div class="status reveal">
+<strong>Live</strong>
+<span>The business can become discoverable.</span>
+</div>
+
+<div class="status reveal">
+<strong>Suspended</strong>
+<span>Visibility can be restricted when necessary.</span>
+</div>
+
+<div class="status reveal">
+<strong>Deactivated</strong>
+<span>The listing can be removed from active discovery.</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     CURRENT / FUTURE
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Clear Product Scope
+</div>
+
+<h2>
+    What IFOUND is today — and where it is going.
+</h2>
+
+<p>
+    The corporate website should never confuse planned capabilities
+    with features that are already available.
+</p>
+
+</div>
+
+
+<div class="scope-grid">
+
+<div class="scope-card current reveal">
+
+<div class="badge live">
+    ● Current Core Direction
+</div>
+
+<h3 style="margin-top:18px;">
+    Discovery
+</h3>
+
+<ul class="scope-list">
+
+<li>Product and category discovery</li>
+<li>Shop and business discovery</li>
+<li>Location-aware search direction</li>
+<li>Digital shop profiles</li>
+<li>Product information</li>
+<li>Shop location information</li>
+<li>Map/directions integration</li>
+<li>Business contact information where available</li>
+
+</ul>
+
+</div>
+
+
+<div class="scope-card future-scope reveal">
+
+<div class="badge future">
+    ◇ Planned / Future
+</div>
+
+<h3 style="margin-top:18px;">
+    Intelligent Ecosystem
+</h3>
+
+<ul class="scope-list">
+
+<li>AI-assisted natural-language search</li>
+<li>Advanced business analytics</li>
+<li>Market and demand intelligence</li>
+<li>Premium business tools</li>
+<li>Business visibility services</li>
+<li>Future advertising</li>
+<li>Future transaction capabilities</li>
+<li>Broader commerce infrastructure</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     TECHNICAL SCALABILITY
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Scalable Architecture
+</div>
+
+<h2>
+    Built to grow beyond a small collection of shops.
+</h2>
+
+<p>
+    A global platform cannot depend on downloading a huge collection
+    of businesses to every device and searching everything locally.
+    The long-term architecture is intended to move toward dedicated
+    search and geographic services.
+</p>
+
+</div>
+
+
+<div class="architecture reveal">
+
+<div class="architecture-flow">
+
+<div class="arch-node">
+    USER GPS
+</div>
+
+<div class="arch-arrow">→</div>
+
+<div class="arch-node highlight">
+    SEARCH SERVICE
+</div>
+
+<div class="arch-arrow">→</div>
+
+<div class="arch-node">
+    PRODUCT SEARCH
+</div>
+
+<div class="arch-arrow">+</div>
+
+<div class="arch-node">
+    GEO SEARCH
+</div>
+
+<div class="arch-arrow">→</div>
+
+<div class="arch-node highlight">
+    RANK RESULTS
+</div>
+
+<div class="arch-arrow">→</div>
+
+<div class="arch-node">
+    NEAREST / RELEVANT SHOP
+</div>
+
+</div>
+
+<p class="architecture-note">
+    A geo-search architecture can use geographic coordinates and
+    geohashes to identify candidate businesses and then apply exact
+    distance calculations before ranking results.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     AI
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="ai-box reveal">
+
+<div class="eyebrow">
+    Future AI Layer
+</div>
+
+<div class="heading" style="margin-bottom:0;">
+
+<h2>
+    Search the way people naturally describe what they need.
+</h2>
+
+<p>
+    AI could eventually allow users to describe a product naturally
+    instead of requiring them to understand exact categories and
+    subcategories.
+</p>
+
+</div>
+
+
+<div class="ai-example">
+
+<div class="ai-step">
+<small>Natural Language</small>
+<p>
+    “I need a black oversized cotton T-shirt, XL, short sleeves,
+    preferably under ₦20,000.”
+</p>
+</div>
+
+<div class="ai-arrow">→</div>
+
+<div class="ai-step">
+<small>AI Understanding</small>
+<p>
+    Product type, colour, material, size, style, sleeve type,
+    price preference and location can become structured search parameters.
+</p>
+</div>
+
+<div class="ai-arrow">→</div>
+
+<div class="ai-step">
+<small>Future Matching</small>
+<p>
+    Structured attributes + location search → matching shops and products.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     BUSINESS INTELLIGENCE
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Future Business Intelligence
+</div>
+
+<h2>
+    Discovery data could reveal market opportunities.
+</h2>
+
+<p>
+    If users repeatedly search for products in an area where few
+    businesses offer them, future analytics could help identify
+    patterns of demand.
+</p>
+
+</div>
+
+
+<div class="intelligence">
+
+<div class="intelligence-card reveal">
+<span>🔎</span>
+<h3>Searches</h3>
+<p>Understand what people are looking for.</p>
+</div>
+
+<div class="intelligence-card reveal">
+<span>📊</span>
+<h3>Demand</h3>
+<p>Identify repeated product interest.</p>
+</div>
+
+<div class="intelligence-card reveal">
+<span>📍</span>
+<h3>Location Trends</h3>
+<p>Understand where demand appears.</p>
+</div>
+
+<div class="intelligence-card reveal">
+<span>💡</span>
+<h3>Opportunity</h3>
+<p>Help businesses identify potential market gaps.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     PROBLEM SOLUTION TABLE
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Problem → Solution
+</div>
+
+<h2>
+    What IFOUND is designed to solve.
+</h2>
+
+</div>
+
+
+<div class="table-wrap reveal">
+
+<table class="solution-table">
+
+<thead>
+<tr>
+<th>Problem</th>
+<th>IFOUND Direction</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>“Where can I find this product?”</td>
+<td>Product search</td>
+</tr>
+
+<tr>
+<td>“Which shop is closest?”</td>
+<td>Location-aware search</td>
+</tr>
+
+<tr>
+<td>Customer visits many shops</td>
+<td>Digital product discovery</td>
+</tr>
+
+<tr>
+<td>Small shops are difficult to discover</td>
+<td>Digital shop visibility</td>
+</tr>
+
+<tr>
+<td>Customers don't know product availability</td>
+<td>Product-level information</td>
+</tr>
+
+<tr>
+<td>Incorrect or untrusted businesses</td>
+<td>Verification workflow</td>
+</tr>
+
+<tr>
+<td>Shop information becomes outdated</td>
+<td>Shop-owner management</td>
+</tr>
+
+<tr>
+<td>User cannot find a nearby shop</td>
+<td>Explore Search</td>
+</tr>
+
+<tr>
+<td>Businesses don't understand demand</td>
+<td>Future statistics and analytics</td>
+</tr>
+
+<tr>
+<td>Searching is difficult</td>
+<td>Future AI-assisted search</td>
+</tr>
+
+<tr>
+<td>Shop location is difficult to find</td>
+<td>Map and directions integration</td>
+</tr>
+
+<tr>
+<td>Business growth is difficult</td>
+<td>Future visibility and business tools</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     SECURITY
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Security & Trust
+</div>
+
+<h2>
+    Security is part of the platform foundation.
+</h2>
+
+<p>
+    A location-aware platform must treat account, business and
+    geographic information responsibly. IFOUND's principle is to
+    collect only information necessary for a feature and protect
+    it appropriately.
+</p>
+
+</div>
+
+
+<div class="security-grid">
+
+<div class="security-card reveal">
+
+<h3>Users</h3>
+
+<div class="security-list">
+
+<span>Account information</span>
+<span>Location information</span>
+<span>Authentication</span>
+<span>Search activity</span>
+<span>Personal information</span>
+
+</div>
+
+</div>
+
+
+<div class="security-card reveal">
+
+<h3>Shop Owners</h3>
+
+<div class="security-list">
+
+<span>Business information</span>
+<span>Account credentials</span>
+<span>Product information</span>
+<span>Business statistics</span>
+<span>Subscription information</span>
+
+</div>
+
+</div>
+
+
+<div class="security-card reveal">
+
+<h3>Company Systems</h3>
+
+<div class="security-list">
+
+<span>Internal data</span>
+<span>Staff accounts</span>
+<span>Administrative systems</span>
+<span>Verification systems</span>
+<span>Security logs</span>
+
+</div>
+
+</div>
+
+
+<div class="security-card reveal">
+
+<h3>Core Principle</h3>
+
+<p style="color:var(--muted);font-size:.86rem;">
+    Collect only the information necessary for a feature and
+    protect it appropriately.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     MONETIZATION
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Future Business Model
+</div>
+
+<h2>
+    Multiple possible paths for long-term sustainability.
+</h2>
+
+<p>
+    These are future possibilities, not claims that all of these
+    capabilities currently exist.
+</p>
+
+</div>
+
+
+<div class="monetization">
+
+<div class="money-card reveal">
+<span>🆓</span>
+<h3>Free Presence</h3>
+<p>Basic verified shop listing.</p>
+</div>
+
+<div class="money-card reveal">
+<span>⭐</span>
+<h3>Subscription</h3>
+<p>Premium business tools and features.</p>
+</div>
+
+<div class="money-card reveal">
+<span>📣</span>
+<h3>Business Visibility</h3>
+<p>Additional promotional and visibility services.</p>
+</div>
+
+<div class="money-card reveal">
+<span>📊</span>
+<h3>Advanced Analytics</h3>
+<p>Statistics and market insights.</p>
+</div>
+
+<div class="money-card reveal">
+<span>💳</span>
+<h3>Future Transactions</h3>
+<p>Potential purchasing and transaction capabilities.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     WHY DISCOVERY FIRST
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="intro-card reveal">
+
+<div class="eyebrow">
+    Discovery First
+</div>
+
+<h2 style="font-family:'Space Grotesk';font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin-bottom:15px;">
+    IFOUND does not have to become an online store immediately.
+</h2>
+
+<p>
+    The first core purpose can remain discovery:
+</p>
+
+<div class="flow" style="margin-top:25px;">
+
+<div class="flow-item">
+<h3>Find</h3>
+<p>Find the product.</p>
+</div>
+
+<div class="flow-item">
+<h3>Discover</h3>
+<p>Find the shop.</p>
+</div>
+
+<div class="flow-item">
+<h3>Understand</h3>
+<p>Get product information.</p>
+</div>
+
+<div class="flow-item">
+<h3>Visit</h3>
+<p>Get directions and visit the business.</p>
+</div>
+
+</div>
+
+<p style="margin-top:25px;">
+    Later, when payment, delivery, fraud protection, refunds,
+    order management, logistics and other infrastructure are ready,
+    transactions can be introduced responsibly.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     ROADMAP
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Long-Term Roadmap
+</div>
+
+<h2>
+    From discovery to a broader intelligent ecosystem.
+</h2>
+
+<p>
+    The platform can evolve in stages instead of trying to build
+    every capability at once.
+</p>
+
+</div>
+
+
+<div class="roadmap">
+
+<div class="road-item reveal">
+
+<div class="road-dot"></div>
+
+<div class="road-card">
+
+<div class="badge live">Foundation</div>
+
+<h3 style="margin-top:12px;">
+    Product & Business Discovery
+</h3>
+
+<p>
+    Build the core experience for discovering products, shops,
+    businesses and physical locations.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="road-item reveal">
+
+<div class="road-dot"></div>
+
+<div class="road-card">
+
+<div class="badge future">Next Direction</div>
+
+<h3 style="margin-top:12px;">
+    Scalable Location & Search Infrastructure
+</h3>
+
+<p>
+    Strengthen geographic search, ranking, location intelligence
+    and scalable search architecture.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="road-item reveal">
+
+<div class="road-dot"></div>
+
+<div class="road-card">
+
+<div class="badge future">Intelligence</div>
+
+<h3 style="margin-top:12px;">
+    AI-Assisted Discovery
+</h3>
+
+<p>
+    Allow users to describe what they need naturally and translate
+    those descriptions into structured product searches.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="road-item reveal">
+
+<div class="road-dot"></div>
+
+<div class="road-card">
+
+<div class="badge future">Business Intelligence</div>
+
+<h3 style="margin-top:12px;">
+    Demand & Market Insights
+</h3>
+
+<p>
+    Help businesses understand product interest, search trends,
+    geographic demand and potential market opportunities.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="road-item reveal">
+
+<div class="road-dot"></div>
+
+<div class="road-card">
+
+<div class="badge future">Future Commerce</div>
+
+<h3 style="margin-top:12px;">
+    Transactions & Broader Commerce
+</h3>
+
+<p>
+    Introduce transaction capabilities only when the supporting
+    payment, logistics, security and trust infrastructure is ready.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     GLOBAL VISION
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Global Vision
+</div>
+
+<h2>
+    Designed for the world, not one country.
+</h2>
+
+<p>
+    IFOUND Global Network is being developed with international
+    expansion in mind. The fundamental discovery experience should
+    work across different countries and regions.
+</p>
+
+</div>
+
+
+<div class="pillar-grid">
+
+<div class="pillar reveal">
+<div class="pillar-icon">🇳🇬</div>
+<h4>Nigeria</h4>
+<p>One potential market within the global network.</p>
+</div>
+
+<div class="pillar reveal">
+<div class="pillar-icon">🇬🇭</div>
+<h4>Ghana</h4>
+<p>Designed to support international expansion.</p>
+</div>
+
+<div class="pillar reveal">
+<div class="pillar-icon">🇰🇪</div>
+<h4>Kenya</h4>
+<p>Part of the broader African opportunity.</p>
+</div>
+
+<div class="pillar reveal">
+<div class="pillar-icon">🇿🇦</div>
+<h4>South Africa</h4>
+<p>Another potential regional market.</p>
+</div>
+
+<div class="pillar reveal">
+<div class="pillar-icon">🇬🇧</div>
+<h4>United Kingdom</h4>
+<p>International expansion beyond Africa.</p>
+</div>
+
+<div class="pillar reveal">
+<div class="pillar-icon">🇺🇸</div>
+<h4>United States</h4>
+<p>Global discovery at larger scale.</p>
+</div>
+
+<div class="pillar reveal">
+<div class="pillar-icon">🇨🇦</div>
+<h4>Canada</h4>
+<p>Another potential global market.</p>
+</div>
+
+<div class="pillar reveal">
+<div class="pillar-icon">🌎</div>
+<h4>And Beyond</h4>
+<p>The architecture is intended for global coverage.</p>
+</div>
+
+</div>
+
+
+<div class="intro-card reveal" style="margin-top:20px;">
+
+<h3>
+    Global by architecture
+</h3>
+
+<p>
+    The platform should be built around standardized country information,
+    geographic coordinates, regions and states, cities, currencies,
+    product categories and business information rather than being
+    hard-coded around a single country.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     ECOSYSTEM
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    IFOUND Ecosystem
+</div>
+
+<h2>
+    IFOUND Global Network is one part of a wider company vision.
+</h2>
+
+<p>
+    IFOUND Global Network can become a flagship technology platform
+    within the broader IFOUND technology, research and knowledge ecosystem.
+</p>
+
+</div>
+
+
+<div class="ecosystem">
+
+<div class="ecosystem-center reveal">
+
+<div>
+<div class="eyebrow" style="justify-content:center;">
+    Parent Organization
+</div>
+
+<h3>
+    IFOUND
+</h3>
+
+<p style="color:var(--muted);font-size:.78rem;margin-top:5px;">
+    Global Technology Company
+</p>
+</div>
+
+</div>
+
+
+<div class="ecosystem-items">
+
+<div class="ecosystem-item reveal">
+<h3>IFOUND Global Network</h3>
+<p>Product, shop and business discovery.</p>
+</div>
+
+<div class="ecosystem-item reveal">
+<h3>Qur'an AI</h3>
+<p>Future AI and knowledge initiative.</p>
+</div>
+
+<div class="ecosystem-item reveal">
+<h3>Research & Innovation</h3>
+<p>Scientific and technological exploration.</p>
+</div>
+
+<div class="ecosystem-item reveal">
+<h3>Astronomy</h3>
+<p>Future research direction.</p>
+</div>
+
+<div class="ecosystem-item reveal">
+<h3>Biology</h3>
+<p>Future life-science research.</p>
+</div>
+
+<div class="ecosystem-item reveal">
+<h3>Earth Science</h3>
+<p>Geology and related research directions.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     FAQ
+====================================================== -->
+
+<section class="section" id="faq">
+
+<div class="container">
+
+<div class="heading reveal">
+
+<div class="eyebrow">
+    Frequently Asked Questions
+</div>
+
+<h2>
+    Questions people may have about IFOUND.
+</h2>
+
+<p>
+    Clear answers help explain what the platform is designed to do,
+    what it does not currently do, and where it is going.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>What is IFOUND Global Network?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    IFOUND Global Network is a global product and business discovery
+    platform designed to connect people with shops and businesses
+    that provide the products they need.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>Is IFOUND only for Nigeria?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    No. IFOUND is being developed with a global vision. Nigeria can be
+    one market, but the platform is not intended to be restricted to
+    Nigeria or any single country.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>What can I search for?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    Users can search for products or categories such as shoes, phones,
+    laptops, food, clothing, building materials, spare parts,
+    furniture, agricultural products, electronics and cosmetics,
+    depending on the businesses and information available.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>Does IFOUND use my location?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    Location is an important part of the IFOUND concept. When location
+    access is available and required for a feature, the platform can
+    use the user's current device location to help identify relevant
+    nearby businesses.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>Why is current GPS location important?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    A user's current GPS position can be more useful for nearby search
+    than relying only on an old saved city or state. It can help answer
+    the practical question: “Where is the nearest place where I can
+    find this?”
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>What happens if there is no shop within 10 km?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    The planned experience can tell the user that there are currently
+    no matching shops within 10 km and provide an Explore Search option
+    that progressively searches farther away, such as 25 km, 50 km,
+    100 km, 150 km and 200 km.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>Can I see product prices and details?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    Product listings can contain useful information such as product
+    name, category, description, price, size, colour, brand, material,
+    condition, stock status and other information when provided by
+    the business.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>Can I find the physical shop?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    Yes. The discovery journey is designed to connect the digital
+    product listing with the physical business. Available map
+    information can help the user locate the shop and use directions.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>Is IFOUND an online store?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    The current core direction is discovery rather than online checkout.
+    IFOUND is designed to help users find products and businesses,
+    understand available information and locate the physical shop.
+    Future transaction capabilities may be introduced later.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>Can shop owners register their businesses?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    Yes. Shop owners are an important part of the IFOUND ecosystem.
+    They can provide business and product information so their physical
+    businesses can become digitally discoverable through the platform.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>Will businesses be verified?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    IFOUND is designed around a verification workflow intended to help
+    distinguish submitted, reviewed, approved, live, suspended and
+    deactivated businesses. Verification and data quality are important
+    parts of building trust.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>Will IFOUND use artificial intelligence?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    AI is a future direction. One possible application is allowing
+    users to describe what they need naturally, after which AI could
+    translate that description into structured product attributes
+    for search and matching.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>Will IFOUND eventually support online payments?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    Future transaction capabilities are part of the broader vision,
+    but IFOUND should not present online purchasing or payment as a
+    current core capability until the necessary payment, logistics,
+    fraud protection, refund and order infrastructure is ready.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>How could IFOUND help businesses grow?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    The first benefit is digital discoverability. Future tools could
+    also provide search statistics, product interest, shop views,
+    geographic demand and other business intelligence.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+<span>What makes IFOUND different from a normal shop directory?</span>
+<span class="faq-icon">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+    IFOUND is intended to go beyond simply listing businesses. Its
+    long-term objective is to connect products, businesses, people
+    and location intelligence, creating a discovery journey from
+    “What do I need?” to “Where can I find it?”
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     FINAL CTA
+====================================================== -->
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-box reveal">
+
+<div class="eyebrow" style="justify-content:center;">
+    IFOUND Global Network
+</div>
+
+<h2>
+    Find the product.
+    <span class="gradient-text">Discover the business.</span>
+</h2>
+
+<p>
+    Starting with discovery, IFOUND Global Network is being built
+    toward a broader ecosystem connecting people, products,
+    businesses, location intelligence and future technology.
+</p>
+
+<div class="buttons">
+
+<a href="products.html" class="btn primary">
+    Explore IFOUND Products →
+</a>
+
+<a href="contact.html" class="btn secondary">
+    Contact IFOUND
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+<div class="container footer">
+
+<div>
+    © <span id="year"></span> <strong>IFOUND.</strong>
+    All rights reserved.
+</div>
+
+<div>
+    IFOUND Global Network · Product & Business Discovery
+</div>
+
+</div>
+<!-- IFOUND APP DOWNLOAD BUTTON -->
+<div class="download-button-wrapper">
+
+    <a href="YOUR-APK-DOWNLOAD-LINK"
+       class="ifound-download-btn"
+       download>
+
+        <span class="download-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v11"></path>
+                <path d="M7 10l5 5 5-5"></path>
+                <path d="M4 20h16"></path>
+            </svg>
+        </span>
+
+        <span class="download-text">DOWNLOAD NOW</span>
+
+    </a>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 25){
+        header.classList.add("scrolled");
+    }else{
+        header.classList.remove("scrolled");
+    }
+
+});
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
+
+menu.addEventListener("click", () => {
+
+    nav.classList.toggle("open");
+    document.body.classList.toggle("menu-open");
+
+});
+
+document.querySelectorAll("#nav a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        nav.classList.remove("open");
+        document.body.classList.remove("menu-open");
+
+    });
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealObserver = new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("visible");
+
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold:.08
+    }
+);
+
+document.querySelectorAll(".reveal").forEach(element => {
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   USER / SHOP OWNER SWITCHER
+========================================================= */
+
+const switchButtons = document.querySelectorAll(".switch-btn");
+const sidePanels = document.querySelectorAll(".side-panel");
+
+switchButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const side = button.dataset.side;
+
+        switchButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        sidePanels.forEach(panel => {
+            panel.classList.remove("active");
+        });
+
+        document.getElementById(side).classList.add("active");
+
+    });
+
+});
+
+
+/* =========================================================
+   RADIUS SEARCH DEMONSTRATION
+========================================================= */
+
+const radiusButtons = document.querySelectorAll(".radius-btn");
+const radiusStatus = document.getElementById("radiusStatus");
+const radiusCircle = document.getElementById("radiusCircle");
+
+radiusButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const radius = button.dataset.radius;
+
+        radiusButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const messages = {
+
+            "10":
+            "<strong>Nearby Search:</strong> prioritizing matching businesses within 10 km.",
+
+            "25":
+            "<strong>Explore Search:</strong> expanding discovery to 25 km.",
+
+            "50":
+            "<strong>Explore Search:</strong> expanding discovery to 50 km.",
+
+            "100":
+            "<strong>Explore Search:</strong> expanding discovery to 100 km.",
+
+            "150":
+            "<strong>Explore Search:</strong> expanding discovery to 150 km.",
+
+            "200":
+            "<strong>Explore Search:</strong> expanding discovery to 200 km."
+
+        };
+
+        radiusStatus.innerHTML = messages[radius];
+
+        const sizes = {
+            "10":"180px",
+            "25":"220px",
+            "50":"270px",
+            "100":"330px",
+            "150":"390px",
+            "200":"450px"
+        };
+
+        radiusCircle.style.width = sizes[radius];
+        radiusCircle.style.height = sizes[radius];
+
+    });
+
+});
+
+
+/* =========================================================
+   DEMO PRODUCT SEARCH
+========================================================= */
+
+const demoSearch = document.getElementById("demoSearch");
+const demoSearchButton = document.getElementById("demoSearchButton");
+const demoResults = document.getElementById("demoResults");
+
+function runDemoSearch(){
+
+    const query = demoSearch.value.trim();
+
+    if(!query){
+
+        demoResults.innerHTML = `
+        <div class="mock-result">
+            <div class="result-name">
+                Enter something to search.
+            </div>
+            <div class="result-meta">
+                Try shoes, laptop, rice or phone.
+            </div>
+        </div>
+        `;
+
+        return;
+    }
+
+    demoResults.innerHTML = `
+
+    <div class="mock-result">
+
+        <div class="result-top">
+
+            <div>
+
+                <div class="result-name">
+                    Matching business
+                </div>
+
+                <div class="result-meta">
+                    Search result for "${query}"
+                </div>
+
+            </div>
+
+            <div class="distance">
+                Nearby
+            </div>
+
+        </div>
+
+        <div class="result-footer">
+
+            <span class="result-price">
+                Product information available
+            </span>
+
+            <span class="map-link">
+                Discover →
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="mock-result">
+
+        <div class="result-top">
+
+            <div>
+
+                <div class="result-name">
+                    More businesses
+                </div>
+
+                <div class="result-meta">
+                    Explore other relevant shops
+                </div>
+
+            </div>
+
+            <div class="distance">
+                Explore
+            </div>
+
+        </div>
+
+        <div class="result-footer">
+
+            <span class="result-price">
+                Compare available information
+            </span>
+
+            <span class="map-link">
+                View →
+            </span>
+
+        </div>
+
+    </div>
+
+    `;
+
+}
+
+demoSearchButton.addEventListener("click",runDemoSearch);
+
+demoSearch.addEventListener("keydown",event => {
+
+    if(event.key === "Enter"){
+        runDemoSearch();
+    }
+
+});
+
+
+/* =========================================================
+   FAQ ACCORDION
+========================================================= */
+
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(question => {
+
+    question.addEventListener("click", () => {
+
+        const item = question.parentElement;
+        const answer = item.querySelector(".faq-answer");
+
+        document.querySelectorAll(".faq-item.open").forEach(openItem => {
+
+            if(openItem !== item){
+
+                openItem.classList.remove("open");
+
+                openItem.querySelector(".faq-answer").style.maxHeight = null;
+
+            }
+
+        });
+
+        item.classList.toggle("open");
+
+        if(item.classList.contains("open")){
+
+            answer.style.maxHeight = answer.scrollHeight + "px";
+
+        }else{
+
+            answer.style.maxHeight = null;
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   INTERNAL LINKS
+========================================================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", event => {
+
+        const target = document.querySelector(link.getAttribute("href"));
+
+        if(target){
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* =========================================================
+   ESC KEY
+========================================================= */
+
+document.addEventListener("keydown", event => {
+
+    if(event.key === "Escape"){
+
+        nav.classList.remove("open");
+        document.body.classList.remove("menu-open");
+
+        document.querySelectorAll(".faq-item.open").forEach(item => {
+
+            item.classList.remove("open");
+
+            item.querySelector(".faq-answer").style.maxHeight = null;
+
+        });
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
